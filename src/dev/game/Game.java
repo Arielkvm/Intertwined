@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import dev.game.display.Display;
 import dev.game.gfx.Assets;
+import dev.game.state.GameState;
+import dev.game.state.State;
 
 
 
@@ -19,8 +21,12 @@ public class Game implements Runnable{
 	private BufferStrategy bs;
 	private Graphics g;
 	
-
+//States
+        private State gameState;
+        
 	
+        
+        
 	public Game(String title, int width,  int  height){
 		this.width = width;
 		this.height = height;
@@ -30,12 +36,15 @@ public class Game implements Runnable{
 	private void  init() {
 		display = new Display(title, width, height);
 		Assets.init();
+                
+                gameState = new GameState();
+                State.setState(gameState);
 	}
 	
-	int x = 0;
-	
 	private void  tick() {
-		x +=1;
+            if(State.getState() != null){
+                State.getState().tick();
+            }
 	}
 	
 	private void render() {
@@ -47,8 +56,9 @@ public class Game implements Runnable{
 		g = bs.getDrawGraphics();
 		g.clearRect(0, 0, width, height);
 		//
-		
-		g.drawImage(Assets.F1, x, 10, null);
+            if(State.getState() != null){
+                State.getState().render(g);
+            }
 		
 		//
 		

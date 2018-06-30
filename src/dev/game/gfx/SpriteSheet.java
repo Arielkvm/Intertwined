@@ -1,5 +1,9 @@
 package dev.game.gfx;
 
+/**
+ * @author EFGK
+ */
+
 import java.awt.image.BufferedImage;
 
 public class SpriteSheet {

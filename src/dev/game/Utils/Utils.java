@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * @author kevin
+ * @author EFGK
  */
 public class Utils {
 

@@ -3,7 +3,7 @@ package dev.game.tiles;
 import dev.game.gfx.Assets;
 
 /**
- * @author kevin
+ * @author EFGK
  */
 
 public class VoidTile extends Tile{

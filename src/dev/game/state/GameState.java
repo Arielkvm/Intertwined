@@ -1,33 +1,32 @@
 package dev.game.state;
 
-import dev.game.Entity.Creature.Player;
-import dev.game.Game;
-import dev.game.tiles.Tile;
+/**
+ * @author EFGK
+ */
+import dev.game.Handler;
+import dev.game.gfx.Assets;
 import dev.game.worlds.World;
 import java.awt.Graphics;
 
-public class GameState extends State{
-    //Juego1
+public class GameState extends State {
     
-    private Player player;
-    private World test;
+    private World World1;
     
-    public GameState(Game game){
-        super(game);
-        player = new Player(game,100,100);
-        test = new World(game,"src/Worlds/World1.txt");
+    public GameState(Handler handler) {
+        super(handler);
+        World1 = new World(handler, "src/Worlds/World2.txt");
+        handler.setWorld(World1);
     }
 
     @Override
     public void tick() {
-        test.tick();
-        player.tick();
+        World1.tick();
     }
 
     @Override
     public void render(Graphics g) {
-        test.render(g);
-        player.render(g);
+        g.drawImage(Assets.F2, 0, 0, 3968, 448, null);
+        World1.render(g);
     }
-    
+
 }

@@ -4,7 +4,7 @@ import dev.game.gfx.Assets;
 
 
 /**
- * @author kevin
+ * @author EFGK
  */
 
 public class ObstacleTile extends Tile{

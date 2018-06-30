@@ -1,7 +1,7 @@
 package dev.game.tiles;
 
 /**
- * @author kevin
+ * @author EFGK
  */
 
 import java.awt.Graphics;
@@ -13,7 +13,8 @@ public class Tile {
     public static Tile voidTile = new VoidTile(0);
     public static Tile obstacleTile = new ObstacleTile(1);
     public static Tile floorTile = new FloorTile(2);
-    
+    public static Tile checkpoint1 =  new CheckPoint1(3);
+    public static Tile checkpoint2 =  new CheckPoint2(4);
     
     protected BufferedImage texture;
     protected final int id;
@@ -34,6 +35,10 @@ public class Tile {
     }
     
     public boolean isSolid(){
+        return false;
+    }
+    
+    public boolean isCheckPoint(){
         return false;
     }
     

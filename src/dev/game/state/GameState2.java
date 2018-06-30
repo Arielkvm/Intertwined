@@ -1,20 +1,29 @@
 package dev.game.state;
 
-import dev.game.Game;
+/**
+ * @author EFGK
+ */
+import dev.game.Handler;
+import dev.game.gfx.Assets;
+import dev.game.worlds.World;
 import java.awt.Graphics;
 
-public class GameState2 extends State{
+public class GameState2 extends State {
 
-    public GameState2(Game game) {
-        super(game);
+
+
+    public GameState2(Handler handler) {
+        super(handler);
     }
-//Juego2
+
     @Override
-    public void tick() {
+    public void tick() {       
     }
 
     @Override
     public void render(Graphics g) {
+        g.drawImage(Assets.F1, 0, 0, 3968, 448, null);
+
     }
-    
+
 }

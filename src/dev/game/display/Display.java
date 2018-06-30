@@ -1,5 +1,9 @@
 package dev.game.display;
 
+/**
+ * @author EFGK
+ */
+
 import java.awt.Canvas;
 import java.awt.Dimension;
 

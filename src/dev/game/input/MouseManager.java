@@ -15,7 +15,11 @@ public class MouseManager implements MouseListener, MouseMotionListener{
     private UIManager uimanager;
     
     public MouseManager(){}
-    
+
+    public UIManager getUimanager() {
+        return uimanager;
+    }
+        
     public void setUIManager(UIManager uimanager){
         this.uimanager = uimanager;
     }

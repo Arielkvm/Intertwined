@@ -64,31 +64,30 @@ public class Game implements Runnable {
         handler = new Handler(this);
         gcamera = new GCamera(handler, 0, 0);
 
-        gameState = new GameState(handler);
-        gameState2 = new GameState2(handler);
-        gameState3 = new GameState3(handler);
-        menuState = new MenuPrincipal(handler);
-        State.setState(menuState);
+        
+        State.setState(getMenuState());
     }
     
        public State getGameState() {
         return gameState;
     }
+       
+       
 
     public void setGameState(State gameState) {
         this.gameState = gameState;
     }
 
     public State getGameState2() {
-        return gameState2;
+        return new GameState2(handler);
     }
     
      public State getGameState3() {
-        return gameState3;
+        return new GameState3(handler);
     }
      
     public State getMenuState() {
-        return menuState;
+        return new MenuPrincipal(handler);
     }
 
     public void setGameState2(State gameState2) {
@@ -97,7 +96,6 @@ public class Game implements Runnable {
 
     private void tick() {
         keyManager.tick();
-
         if (State.getState() != null) {
             State.getState().tick();
         }

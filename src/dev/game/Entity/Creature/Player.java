@@ -78,20 +78,17 @@ public class Player extends Creature {
         State G1 = handler.getGameState();
         State G2  = handler.getGameState2();
         
-
-
-
-            xMove = DEFAULT_SPEEDX;
-
+            if(handler.getKManager().left){
+                xMove -= DEFAULT_SPEEDX;
+            }
+            if(handler.getKManager().right){
+                xMove += DEFAULT_SPEEDX;
+            }
             if (handler.getKManager().up && saltar) {
                 delay = 0;
                 yMove = DEFAULT_SPEEDY;
                 saltar = false;
             }
-
-  
-        
-        
     }
 
     @Override

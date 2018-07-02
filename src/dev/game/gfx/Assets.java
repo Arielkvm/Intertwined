@@ -12,7 +12,7 @@ public class Assets {
 	
 	public static BufferedImage floor, obstacle, brick, plataform, spTile, voyd;
         
-        public static BufferedImage[] B1, B2, B3, B4, jump, run, walk_R, walk_L;
+        public static BufferedImage[] B1, B2, B3, B4, jump, jumpball, run, walk_R, walk_L,standing;
         public static BufferedImage F1, F2, F3, F4, F5, F6;
 	
 	public static void init(){
@@ -54,21 +54,28 @@ public class Assets {
 	//player
                 run = new BufferedImage[2];
                 jump = new BufferedImage[2];
+                jumpball = new BufferedImage[2];
                 walk_R = new BufferedImage[2];
                 walk_L = new BufferedImage[2];
+                standing = new BufferedImage[1];
                 //run
                 run[0] = sheet2.crop(0, height*2, width, height);
 		run[1] = sheet2.crop(width, height*2, width, height);
                 //jump
-		jump[0] = sheet2.crop(width * 5, height, width, height);
-		jump[1] = sheet2.crop(width * 5, height, width, height);
+		jump[0] = sheet2.crop(width * 5, height*2, width, height);
+		jump[1] = sheet2.crop(width * 5, height*2, width, height);
+                
+                jumpball[0] = sheet2.crop(width * 6, height*2, width, height);
+		jumpball[1] = sheet2.crop(width * 6, height*2, width, height);
                 //walk left
                 walk_L[0] = sheet2.crop(width * 3, height*2, width, height);
                 walk_L[1] = sheet2.crop(width * 4, height*2, width, height);
                 //walk rigth
                 walk_R[0] = sheet2.crop(width, height*2, width, height);
 		walk_R[1] = sheet2.crop(width*2, height*2, width, height);
-        //void
+                
+                standing[0] = sheet2.crop(0, height*2, width, height);
+        //voidg[0] = sheet2.crop(0, height*2, width, height);
                 voyd = sheet.crop(0, height*2, width, height);
                 
 	}

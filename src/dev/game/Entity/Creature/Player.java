@@ -19,9 +19,10 @@ public class Player extends Creature {
     
     private float delay = 5.0f;
     private boolean saltar = false;
+    private boolean standing = true;
 
     //Kawaii ❤❤❤ Animations 
-    private Animation A_Run, A_Jump, A_Left, A_Right;
+    private Animation A_Run, A_Jump, A_Left, A_Right,A_Standing,A_Jump2;
 
     public Player(Handler handler, float x, float y) {
         super(handler, x, y, Creature.DEFAULT_WIDTH, Creature.DEFAULT_HEIGHT);
@@ -33,9 +34,12 @@ public class Player extends Creature {
 
         //❤❤❤ Animations ❤❤❤
         A_Run = new Animation(250, Assets.run);
-        A_Jump = new Animation(750, Assets.jump);
+        A_Jump = new Animation(250, Assets.jump);
+        A_Jump2 = new Animation(250, Assets.jumpball);
         A_Left = new Animation(500, Assets.walk_L);
         A_Right = new Animation(500, Assets.walk_R);
+        A_Standing = new Animation(0, Assets.standing);
+        
     }
 
     @Override
@@ -102,10 +106,7 @@ public class Player extends Creature {
             }
       //  }
             
-            
-
-  
-        
+           
         
     }
 
@@ -126,12 +127,12 @@ public class Player extends Creature {
             return A_Left.getCFrame();
         } else if (xMove > 0) {
             return A_Right.getCFrame();
-        } else if (yMove > 0) {
+        } else if (saltar==false) {
             return A_Jump.getCFrame();
-        } else if(yMove < 0){
-            return A_Run.getCFrame();
+        }else if(standing==true){
+            return A_Standing.getCFrame();
         }else{
-            return A_Jump.getCFrame();
+            return A_Standing.getCFrame();
         }
     }
 }

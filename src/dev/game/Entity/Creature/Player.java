@@ -80,31 +80,27 @@ public class Player extends Creature {
         State Current  =  handler.getGameState();
         State G1 = handler.getGameState();
         State G2  = handler.getGameState2();
-        xMove = DEFAULT_SPEEDX;
+//        xMove = DEFAULT_SPEEDX;
 //            System.out.println(gm.mundo);
-        if(gm.mundo=="src/Worlds/World1.txt"){
-            if (handler.getKManager().up && saltar) {
-                delay = 0;
-                yMove = DEFAULT_SPEEDY;
-                saltar = false;
-            }
-        }else if(gm.mundo=="src/Worlds/World2.txt"){
+//        if(gm.mundo=="src/Worlds/World1.txt"){
+//            if (handler.getKManager().up && saltar) {
+//                delay = 0;
+//                yMove = DEFAULT_SPEEDY;
+//                saltar = false;
+//            }
+//        }else if(gm.mundo == "src/Worlds/World2.txt"){
             if (handler.getKManager().up && saltar) {
                 delay = 0;
                 yMove = DEFAULT_SPEEDY;
                 saltar = false;
             }
             if (handler.getKManager().right) {
-                delay = 0;
-                yMove = DEFAULT_SPEEDY;
-                saltar = false;
+                xMove+=DEFAULT_SPEEDX;
             }
             if (handler.getKManager().left) {
-                delay = 0;
-                yMove = DEFAULT_SPEEDY;
-                saltar = false;
+                xMove-=DEFAULT_SPEEDX;
             }
-        }
+      //  }
             
             
 
@@ -132,7 +128,7 @@ public class Player extends Creature {
             return A_Right.getCFrame();
         } else if (yMove > 0) {
             return A_Jump.getCFrame();
-        } else {
+        } else if(yMove){
             return A_Run.getCFrame();
         }
     }

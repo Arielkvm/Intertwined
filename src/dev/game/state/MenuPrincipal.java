@@ -14,7 +14,7 @@ import java.awt.Graphics;
 
 public class MenuPrincipal extends State{
     
-    private UIManager uimanager;
+    public UIManager uimanager;
     
     public MenuPrincipal(Handler handler) {
         super(handler);
@@ -32,14 +32,14 @@ public class MenuPrincipal extends State{
             @Override
             public void onClick() {
                 handler.getMouseManager().setUIManager(null);
-                State.setState(handler.getGame().gameState);
+                State.setState(handler.getGame().gameState2);
             }}));
         
         uimanager.addObject(new UIIButton(352, 400, 192, 64, Assets.B1, new ClickListener(){
             @Override
             public void onClick() {
                 handler.getMouseManager().setUIManager(null);
-                State.setState(handler.getGame().gameState);
+                State.setState(handler.getGame().gameState3);
             }}));
     }
     

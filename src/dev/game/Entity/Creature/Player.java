@@ -128,8 +128,10 @@ public class Player extends Creature {
             return A_Right.getCFrame();
         } else if (yMove > 0) {
             return A_Jump.getCFrame();
-        } else if(yMove){
+        } else if(yMove < 0){
             return A_Run.getCFrame();
+        }else{
+            return A_Jump.getCFrame();
         }
     }
 }

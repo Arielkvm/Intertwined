@@ -10,7 +10,7 @@ public class VoidTile extends Tile{
     
     public VoidTile(int id) {
         
-        super(Assets.vod, id);
+        super(Assets.voyd, id);
     }
     
 }

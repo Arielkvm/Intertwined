@@ -8,7 +8,7 @@ import dev.game.gfx.Assets;
 public class CheckPoint1 extends Tile {
 
     public CheckPoint1(int id) {
-        super(Assets.vod, id);
+        super(Assets.voyd, id);
     }
 
     @Override

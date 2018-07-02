@@ -34,30 +34,6 @@ public class Game implements Runnable {
     public State gameState3;
     public State menuState;
 
-    public State getGameState() {
-        return gameState;
-    }
-
-    public void setGameState(State gameState) {
-        this.gameState = gameState;
-    }
-
-    public State getGameState2() {
-        return gameState2;
-    }
-    
-     public State getGameState3() {
-        return gameState3;
-    }
-     
-    public State getMenuState() {
-        return menuState;
-    }
-
-    public void setGameState2(State gameState2) {
-        this.gameState2 = gameState2;
-    }
-
     //Input
     private KeyManager keyManager;
     private MouseManager MManager;
@@ -93,6 +69,30 @@ public class Game implements Runnable {
         gameState3 = new GameState3(handler);
         menuState = new MenuPrincipal(handler);
         State.setState(menuState);
+    }
+    
+       public State getGameState() {
+        return gameState;
+    }
+
+    public void setGameState(State gameState) {
+        this.gameState = gameState;
+    }
+
+    public State getGameState2() {
+        return gameState2;
+    }
+    
+     public State getGameState3() {
+        return gameState3;
+    }
+     
+    public State getMenuState() {
+        return menuState;
+    }
+
+    public void setGameState2(State gameState2) {
+        this.gameState2 = gameState2;
     }
 
     private void tick() {

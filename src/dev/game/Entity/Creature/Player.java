@@ -6,6 +6,7 @@ package dev.game.Entity.Creature;
 import dev.game.Handler;
 import dev.game.gfx.Animation;
 import dev.game.gfx.Assets;
+import dev.game.state.GameState;
 import dev.game.state.State;
 import dev.game.tiles.Tile;
 import java.awt.Color;
@@ -13,7 +14,9 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 public class Player extends Creature {
-
+    
+    GameState gm;
+    
     private float delay = 5.0f;
     private boolean saltar = false;
 
@@ -77,17 +80,33 @@ public class Player extends Creature {
         State Current  =  handler.getGameState();
         State G1 = handler.getGameState();
         State G2  = handler.getGameState2();
-        
-
-
-
-            xMove = DEFAULT_SPEEDX;
-
+        xMove = DEFAULT_SPEEDX;
+//            System.out.println(gm.mundo);
+        if(gm.mundo=="src/Worlds/World1.txt"){
             if (handler.getKManager().up && saltar) {
                 delay = 0;
                 yMove = DEFAULT_SPEEDY;
                 saltar = false;
             }
+        }else if(gm.mundo=="src/Worlds/World2.txt"){
+            if (handler.getKManager().up && saltar) {
+                delay = 0;
+                yMove = DEFAULT_SPEEDY;
+                saltar = false;
+            }
+            if (handler.getKManager().right) {
+                delay = 0;
+                yMove = DEFAULT_SPEEDY;
+                saltar = false;
+            }
+            if (handler.getKManager().left) {
+                delay = 0;
+                yMove = DEFAULT_SPEEDY;
+                saltar = false;
+            }
+        }
+            
+            
 
   
         

@@ -69,7 +69,7 @@ public class Assets {
                 walk_R[0] = sheet2.crop(width, height*2, width, height);
 		walk_R[1] = sheet2.crop(width*2, height*2, width, height);
         //void
-                voyd = sheet.crop(0, height * 2, width, height);
+                voyd = sheet.crop(0, height*2, width, height);
                 
 	}
 	

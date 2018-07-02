@@ -6,7 +6,7 @@ package dev.game;
 
 public class Launcher {
 	public static void main(String[] args) {
-		Game game = new Game("Title", 896, 480);
+		Game game = new Game("Intertwined", 896, 480);
 		game.start();
 	}
 }

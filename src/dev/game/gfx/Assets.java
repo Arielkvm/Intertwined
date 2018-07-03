@@ -7,7 +7,6 @@ package dev.game.gfx;
 import java.awt.image.BufferedImage;
 
 public class Assets {
-
 	private static final int width=64, height = 64;
 	
 	public static BufferedImage floor, obstacle, brick, plataform, spTile, voyd;

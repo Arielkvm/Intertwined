@@ -9,7 +9,7 @@ import dev.game.gfx.Assets;
 public class Edificio3_2 extends Tile {
     
     public Edificio3_2(int id) {
-        super(Assets.brick, id);
+        super(Assets.build3_2, id);
     }
     
     @Override

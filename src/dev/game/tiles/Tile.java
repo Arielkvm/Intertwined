@@ -15,13 +15,13 @@ public class Tile {
     public static Tile floorTile = new FloorTile(2);
     public static Tile checkpoint1 =  new CheckPoint1(3);
     public static Tile checkpoint2 =  new CheckPoint2(4);
-    public static Tile edificio1_1 = new Edificio1_1(5);
-    public static Tile edificio1_2 = new Edificio1_2(6);
+    public static Tile edificio3_1 = new Edificio3_1(5);
+    public static Tile edificio3_2 = new Edificio3_2(6);
     public static Tile edificio2_1 = new Edificio2_1(7);
     public static Tile edificio2_2 = new Edificio2_2(8);
-    public static Tile edificio3_1 = new Edificio3_1(9);
-    public static Tile edificio3_2 = new Edificio3_2(10);
-   
+    public static Tile edificio1_1 = new Edificio1_1(9);
+    public static Tile edificio1_2 = new Edificio1_2(10);
+   public static Tile floorAsfalt = new FloorTile(12);
     
     protected BufferedImage texture;
     protected final int id;

@@ -2,10 +2,15 @@ package dev.game.tiles;
 
 import dev.game.gfx.Assets;
 
-public class floorAsfalt extends Tile{
+/**
+ * @author EFGK
+ */
+
+
+public class platarform extends Tile{
     
-    public floorAsfalt(int id) {
-        super(Assets.floor_asfalt, id);
+    public platarform(int id) {
+        super(Assets.platarform, id);
     }
     
     @Override

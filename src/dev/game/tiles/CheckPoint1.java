@@ -16,4 +16,7 @@ public class CheckPoint1 extends Tile {
         return true;
     }
 
+    public boolean isCP2H(){
+        return true;
+    }
 }

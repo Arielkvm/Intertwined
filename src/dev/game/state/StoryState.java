@@ -6,9 +6,9 @@ import java.awt.Graphics;
 /**
  * @author EFGK
  */
-public class StoreState extends State{
+public class StoryState extends State{
 
-    public StoreState(Handler handler) {
+    public StoryState(Handler handler) {
         super(handler);
     }
 

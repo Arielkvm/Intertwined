@@ -47,9 +47,17 @@ public abstract class Creature extends Entity {
             int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.Twidth;
 
             if (!CWTile(tx, (int) (y + bounds.y) / Tile.Theight) && !CWTile(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-                if (!CheckTile(tx, (int) (y + bounds.y) / Tile.Theight) && !CheckTile(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-                    x += xMove;
-                }else{
+                if (!CTH(tx, (int) (y + bounds.y) / Tile.Theight) && !CTH(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                    if (!CTH2(tx, (int) (y + bounds.y) / Tile.Theight) && !CTH2(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                        if (!CTD(tx, (int) (y + bounds.y) / Tile.Theight) && !CTD(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                            x += xMove;
+                        } else {
+                            State.setState(handler.getGame().getGameState3());
+                        }
+                    } else {
+                        State.setState(handler.getGame().getGameState2());
+                    }
+                } else {
                     State.setState(handler.getGame().getMenuState());
                 }
             } else {
@@ -62,8 +70,20 @@ public abstract class Creature extends Entity {
 
             if (!CWTile(tx, (int) (y + bounds.y) / Tile.Theight) && !CWTile(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
                 if (!CheckTile(tx, (int) (y + bounds.y) / Tile.Theight) && !CheckTile(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-                x += xMove;
-                }else{
+                    if (!CTH(tx, (int) (y + bounds.y) / Tile.Theight) && !CTH(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                        if (!CTH2(tx, (int) (y + bounds.y) / Tile.Theight) && !CTH2(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                            if (!CTD(tx, (int) (y + bounds.y) / Tile.Theight) && !CTD(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                                x += xMove;
+                            } else {
+                                State.setState(handler.getGame().getGameState3());
+                            }
+                        } else {
+                            State.setState(handler.getGame().getGameState2());
+                        }
+                    } else {
+                        State.setState(handler.getGame().getMenuState());
+                    }
+                } else {
                     State.setState(handler.getGame().getMenuState());
                 }
             } else {
@@ -79,10 +99,18 @@ public abstract class Creature extends Entity {
         if (yMove < 0) {//up
             int ty = (int) (y + yMove + bounds.y) / Tile.Theight;
             if (!CWTile((int) (x + bounds.x) / Tile.Twidth, ty) && !CWTile((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
-                if (!CheckTile((int) (x + bounds.x) / Tile.Twidth, ty) && !CheckTile((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
-                y += yMove;
-                }else{
-                State.setState(handler.getGame().getMenuState());
+                if (!CTH((int) (x + bounds.x) / Tile.Twidth, ty) && !CTH((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                    if (!CTH2((int) (x + bounds.x) / Tile.Twidth, ty) && !CTH2((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                        if (!CTD((int) (x + bounds.x) / Tile.Twidth, ty) && !CTD((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                            y += yMove;
+                        } else {
+                            State.setState(handler.getGame().getGameState3());
+                        }
+                    } else {
+                        State.setState(handler.getGame().getGameState2());
+                    }
+                } else {
+                    State.setState(handler.getGame().getMenuState());
                 }
             } else {
                 y = ty * Tile.Theight + Tile.Theight - bounds.y;
@@ -91,9 +119,17 @@ public abstract class Creature extends Entity {
         } else if (yMove > 0) {//down
             int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.Theight;
             if (!CWTile((int) (x + bounds.x) / Tile.Twidth, ty) && !CWTile((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
-                if (!CheckTile((int) (x + bounds.x) / Tile.Twidth, ty) && !CheckTile((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
-                y += yMove;
-                }else{
+                if (!CTH((int) (x + bounds.x) / Tile.Twidth, ty) && !CTH((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                    if (!CTH2((int) (x + bounds.x) / Tile.Twidth, ty) && !CTH2((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                        if (!CTD((int) (x + bounds.x) / Tile.Twidth, ty) && !CTD((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                            y += yMove;
+                        } else {
+                            State.setState(handler.getGame().getGameState3());
+                        }
+                    } else {
+                        State.setState(handler.getGame().getGameState2());
+                    }
+                } else {
                     State.setState(handler.getGame().getMenuState());
                 }
             } else {
@@ -110,6 +146,18 @@ public abstract class Creature extends Entity {
 
     protected boolean CheckTile(int x, int y) {
         return handler.getWorld().getTile(x, y).isCheckPoint();
+    }
+
+    protected boolean CTH(int x, int y) {
+        return handler.getWorld().getTile(x, y).isCP2H();
+    }
+
+    protected boolean CTH2(int x, int y) {
+        return handler.getWorld().getTile(x, y).isCP2H2();
+    }
+
+    protected boolean CTD(int x, int y) {
+        return handler.getWorld().getTile(x, y).isCP2D();
     }
 
     public int getHealth() {

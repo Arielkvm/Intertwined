@@ -13,8 +13,11 @@ import dev.game.input.MouseManager;
 import dev.game.state.GameState;
 import dev.game.state.GameState2;
 import dev.game.state.GameState3;
+import dev.game.state.HistoryState;
 import dev.game.state.MenuPrincipal;
 import dev.game.state.State;
+import dev.game.state.StoreState;
+import dev.game.state.StoryState;
 
 public class Game implements Runnable {
 
@@ -33,6 +36,10 @@ public class Game implements Runnable {
     public State gameState2;
     public State gameState3;
     public State menuState;
+    public State storestate;
+    public State deathstate;
+    public State storystate;
+    public State historystate;
 
     //Input
     private KeyManager keyManager;
@@ -70,29 +77,33 @@ public class Game implements Runnable {
 //        menuState = new MenuPrincipal(handler);
         State.setState(this.getMenuState());
     }
-    
-       public State getGameState() {
-        return gameState;
-    }
 
-    public void setGameState(State gameState) {
-        this.gameState = gameState;
+    public State getGameState() {
+        return gameState;
     }
 
     public State getGameState2() {
         return gameState2;
     }
-    
-     public State getGameState3() {
+
+    public State getGameState3() {
         return new GameState3(handler);
     }
-     
+
     public State getMenuState() {
         return new MenuPrincipal(handler);
     }
 
-    public void setGameState2(State gameState2) {
-        this.gameState2 = gameState2;
+    public State getStoreState() {
+        return new StoreState(handler);
+    }
+    
+    public State getStoryState() {
+        return new StoryState(handler);
+    }
+    
+    public State getHistoryState() {
+        return new HistoryState(handler);
     }
 
     private void tick() {

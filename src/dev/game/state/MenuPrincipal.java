@@ -24,28 +24,28 @@ public class MenuPrincipal extends State{
         uimanager.addObject(new UIIButton(352, 200, 192, 64, Assets.B1, new ClickListener(){
             @Override
             public void onClick() {
-               // handler.getMouseManager().setUIManager(null);
+                handler.getMouseManager().setUIManager(null);
                 State.setState(handler.getGame().getGameState());
             }}));
         
         uimanager.addObject(new UIIButton(352, 265, 192, 64, Assets.B2, new ClickListener(){
             @Override
             public void onClick() {
-                //handler.getMouseManager().setUIManager(null);
+                handler.getMouseManager().setUIManager(null);
                 State.setState(handler.getGame().getGameState2());
             }}));
         
         uimanager.addObject(new UIIButton(352, 330, 192, 64, Assets.B3, new ClickListener(){
             @Override
             public void onClick() {
-               // handler.getMouseManager().setUIManager(null);
+                handler.getMouseManager().setUIManager(null);
                 State.setState(handler.getGame().getGameState3());
             }}));
         uimanager.addObject(new UIIButton(352, 395, 192, 64, Assets.B4, new ClickListener(){
             @Override
             public void onClick() {
-              //  handler.getMouseManager().setUIManager(null);
-               // State.setState(handler.getGame().gameState3);
+//                handler.getMouseManager().setUIManager(null);
+//                State.setState(handler.getGame().gameState3);
             }}));
     }
     
@@ -58,6 +58,8 @@ public class MenuPrincipal extends State{
     public void render(Graphics g) {
         g.drawImage(Assets.F6, 0, 0, 900, 500, null);
         uimanager.render(g);
+        
+
     }
     
     

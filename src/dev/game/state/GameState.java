@@ -22,7 +22,7 @@ public class GameState extends State {
     
     public GameState(Handler handler) {
        super(handler);
-        World1 = new World(handler,"src/Worlds/World2.txt");
+        World1 = new World(handler,mundo);
         handler.setWorld(World1);
     }
 

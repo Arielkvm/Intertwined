@@ -3,6 +3,8 @@ package dev.game.Entity.Creature;
 /**
  * @author EFGK
  */
+import static dev.game.Entity.Creature.Creature.DEFAULT_SPEEDX;
+import static dev.game.Entity.Creature.Creature.DEFAULT_SPEEDY;
 import dev.game.Handler;
 import dev.game.gfx.Animation;
 import dev.game.gfx.Assets;

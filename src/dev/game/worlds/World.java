@@ -17,6 +17,8 @@ public class World {
     private int width, height;
     private int spawnX, spawnY;
     private float Speedx, Speedy;
+    private int[][] tiles;
+    private EntityManager EManager;
 
     public float getSpeedx() {
         return Speedx;
@@ -25,9 +27,6 @@ public class World {
     public float getSpeedy() {
         return Speedy;
     }
-    private int[][] tiles;
-    
-    private EntityManager EManager;
 
     public int getSpawnX() {
         return spawnX;

@@ -25,14 +25,14 @@ public class MenuPrincipal extends State{
             @Override
             public void onClick() {
                // handler.getMouseManager().setUIManager(null);
-                State.setState(handler.getGame().gameState);
+                State.setState(handler.getGame().getGameState());
             }}));
         
         uimanager.addObject(new UIIButton(352, 265, 192, 64, Assets.B2, new ClickListener(){
             @Override
             public void onClick() {
                 //handler.getMouseManager().setUIManager(null);
-                State.setState(handler.getGame().gameState2);
+                State.setState(handler.getGame().getGameState2());
             }}));
         
         uimanager.addObject(new UIIButton(352, 330, 192, 64, Assets.B3, new ClickListener(){

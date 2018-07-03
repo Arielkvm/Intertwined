@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 public class Assets {
 	private static final int width=64, height = 64;
 	
-	public static BufferedImage floor,floor_asfalt, obstacle, brick, plataform, spTile, voyd,build1,build1_2,build2,build2_2,build3,build3_2;
+	public static BufferedImage floor,floor_asfalt, obstacle, brick, plataform, spTile, voyd,build1,build1_2,build2,build2_2,build3,build3_2,platarform;
         
         public static BufferedImage[] B1, B2, B3, B4, jump, jumpball, run, walk_R, walk_L,standing;
         public static BufferedImage F1, F2, F3, F4, F5, F6;
@@ -57,6 +57,7 @@ public class Assets {
                 build2_2 =  sheet2.crop(width * 7, 0, width, height);
                 build3 =  sheet2.crop(width * 8, 0, width, height);
                 build3_2 =  sheet2.crop(width * 9, 0, width, height);
+                platarform =  sheet2.crop(width * 0, height*3, width, height);
                 
 	//player
                 run = new BufferedImage[2];

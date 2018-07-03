@@ -4,6 +4,8 @@ package dev.game.tiles;
  * @author EFGK
  */
 
+import static dev.game.gfx.Assets.brick;
+import static dev.game.gfx.Assets.platarform;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
@@ -21,6 +23,7 @@ public class Tile {
     public static Tile edificio2_2 = new Edificio2_2(8);
     public static Tile edificio1_1 = new Edificio1_1(9);
     public static Tile edificio1_2 = new Edificio1_2(10);
+    public static Tile platarform = new platarform(11);
    public static Tile floorAsfalt = new FloorTile(12);
     
     protected BufferedImage texture;

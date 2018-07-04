@@ -10,20 +10,15 @@ import java.awt.Graphics;
 
 public class GameState extends State {
 
-    private World World1;
-    public static String mundo = "src/Worlds/World1.txt";
+    private final World World1;
 
     public World getWorld1() {
         return World1;
     }
 
-    public void setWorld1(World World1) {
-        this.World1 = World1;
-    }
-
     public GameState(Handler handler) {
         super(handler);
-        World1 = new World(handler, mundo);
+        World1 = new World(handler, "src/Worlds/World1.txt");
         handler.setWorld(World1);
     }
 

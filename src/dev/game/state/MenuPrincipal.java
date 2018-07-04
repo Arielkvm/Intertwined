@@ -10,6 +10,8 @@ import dev.game.UI.UIIButton;
 import dev.game.UI.UIManager;
 import dev.game.gfx.Assets;
 import java.awt.Graphics;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class MenuPrincipal extends State{
@@ -26,26 +28,27 @@ public class MenuPrincipal extends State{
             public void onClick() {
                 handler.getMouseManager().setUIManager(null);
                 State.setState(handler.getGame().getGameState());
+                
             }}));
         
         uimanager.addObject(new UIIButton(352, 265, 192, 64, Assets.B2, new ClickListener(){
             @Override
             public void onClick() {
                 handler.getMouseManager().setUIManager(null);
-                State.setState(handler.getGame().getGameState2());
+//                State.setState(handler.getGame().getGameState2());
             }}));
         
         uimanager.addObject(new UIIButton(352, 330, 192, 64, Assets.B3, new ClickListener(){
             @Override
             public void onClick() {
                 handler.getMouseManager().setUIManager(null);
-                State.setState(handler.getGame().getGameState3());
+                State.setState(handler.getGame().getStoreState());
             }}));
         uimanager.addObject(new UIIButton(352, 395, 192, 64, Assets.B4, new ClickListener(){
             @Override
             public void onClick() {
-//                handler.getMouseManager().setUIManager(null);
-//                State.setState(handler.getGame().gameState3);
+                handler.getMouseManager().setUIManager(null);
+                State.setState(handler.getGame().getGameState3());
             }}));
     }
     

@@ -3,6 +3,7 @@ package dev.game.state;
 /**
  * @author EFGK
  */
+import dev.game.Entity.Creature.Player;
 import dev.game.Handler;
 import dev.game.gfx.Assets;
 import dev.game.worlds.World;
@@ -10,11 +11,11 @@ import java.awt.Graphics;
 
 public class GameState2 extends State {
 
-//    private World World2;
+//    private final World World2;
 
     public GameState2(Handler handler) {
         super(handler);
-//        World2 = new World(handler, "src/Worlds/World2.txt");
+//        World2 = new World(handler, "src/Worlds/World1.txt");
 //        handler.setWorld(World2);
     }
 

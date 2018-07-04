@@ -39,7 +39,6 @@ public class UIManager {
 
     public void onMouseRelease(MouseEvent e) {
         for (UIObject o : objects) {
-            System.out.println(o.toString());
             o.onMouseRelease(e);
         }
     }

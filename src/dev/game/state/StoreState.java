@@ -13,6 +13,7 @@ import java.awt.Graphics;
 public class StoreState extends State{
     
     public UIManager STUI;
+    int tm = 100;
 
     public StoreState(Handler handler) {
         super(handler);
@@ -20,22 +21,46 @@ public class StoreState extends State{
         STUI = new UIManager(handler);
         handler.getMouseManager().setUIManager(STUI);
                 
-        STUI.addObject(new UIIButton(0,0,192,64, Assets.B1, new ClickListener(){
+        STUI.addObject(new UIIButton(250, 150, tm, tm, Assets.Brain, new ClickListener(){
             @Override
             public void onClick(){
                 
-            
+            }}));
+        
+        STUI.addObject(new UIIButton(500, 150, tm, tm, Assets.Clock, new ClickListener(){
+            @Override
+            public void onClick(){
+                
+            }}));
+        
+        STUI.addObject(new UIIButton(250, 350, tm, tm, Assets.Sneaker, new ClickListener(){
+            @Override
+            public void onClick(){
+                
+            }}));
+        
+        STUI.addObject(new UIIButton(500, 350, tm, tm, Assets.Potion2, new ClickListener(){
+            @Override
+            public void onClick(){
+                
+            }}));
+        
+        STUI.addObject(new UIIButton(25, 400, 150, 75, Assets.Back, new ClickListener(){
+            @Override
+            public void onClick(){
+                State.setState(handler.getGame().getMenuState());
             }}));
     }
 
     @Override
     public void tick() {
-    
+        STUI.tick();
     }
 
     @Override
     public void render(Graphics g) {
-    
+        g.drawImage(Assets.F6, 0, 0, 900, 500, null);
+        STUI.render(g);
     }
     
 }

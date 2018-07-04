@@ -52,13 +52,13 @@ public abstract class Creature extends Entity {
                         if (!CTD(tx, (int) (y + bounds.y) / Tile.Theight) && !CTD(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
                             x += xMove;
                         } else {
-                            State.setState(handler.getGame().getGameState3());
+                            State.setState(handler.getGame().getDeathState());
                         }
                     } else {
-                        State.setState(handler.getGame().getGameState2());
+                        State.setState(handler.getGame().getStoryState());
                     }
                 } else {
-                    State.setState(handler.getGame().getMenuState());
+                    State.setState(handler.getGame().getHistoryState());
                 }
             } else {
 
@@ -69,22 +69,19 @@ public abstract class Creature extends Entity {
             int tx = (int) (x + xMove + bounds.x) / Tile.Twidth;
 
             if (!CWTile(tx, (int) (y + bounds.y) / Tile.Theight) && !CWTile(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-                if (!CheckTile(tx, (int) (y + bounds.y) / Tile.Theight) && !CheckTile(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-                    if (!CTH(tx, (int) (y + bounds.y) / Tile.Theight) && !CTH(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-                        if (!CTH2(tx, (int) (y + bounds.y) / Tile.Theight) && !CTH2(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-                            if (!CTD(tx, (int) (y + bounds.y) / Tile.Theight) && !CTD(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-                                x += xMove;
-                            } else {
-                                State.setState(handler.getGame().getGameState3());
-                            }
+                if (!CTH(tx, (int) (y + bounds.y) / Tile.Theight) && !CTH(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                    if (!CTH2(tx, (int) (y + bounds.y) / Tile.Theight) && !CTH2(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                        if (!CTD(tx, (int) (y + bounds.y) / Tile.Theight) && !CTD(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                            x += xMove;
                         } else {
-                            State.setState(handler.getGame().getGameState2());
+                            State.setState(handler.getGame().getDeathState());
                         }
                     } else {
-                        State.setState(handler.getGame().getMenuState());
+                        State.setState(handler.getGame().getStoryState());
                     }
                 } else {
-                    State.setState(handler.getGame().getMenuState());
+                    State.setState(handler.getGame().getHistoryState());
+
                 }
             } else {
 
@@ -104,13 +101,13 @@ public abstract class Creature extends Entity {
                         if (!CTD((int) (x + bounds.x) / Tile.Twidth, ty) && !CTD((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
                             y += yMove;
                         } else {
-                            State.setState(handler.getGame().getGameState3());
+                            State.setState(handler.getGame().getDeathState());
                         }
                     } else {
-                        State.setState(handler.getGame().getGameState2());
+                        State.setState(handler.getGame().getStoryState());
                     }
                 } else {
-                    State.setState(handler.getGame().getMenuState());
+                    State.setState(handler.getGame().getHistoryState());
                 }
             } else {
                 y = ty * Tile.Theight + Tile.Theight - bounds.y;
@@ -124,13 +121,13 @@ public abstract class Creature extends Entity {
                         if (!CTD((int) (x + bounds.x) / Tile.Twidth, ty) && !CTD((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
                             y += yMove;
                         } else {
-                            State.setState(handler.getGame().getGameState3());
+                            State.setState(handler.getGame().getDeathState());
                         }
                     } else {
-                        State.setState(handler.getGame().getGameState2());
+                        State.setState(handler.getGame().getStoryState());
                     }
                 } else {
-                    State.setState(handler.getGame().getMenuState());
+                    State.setState(handler.getGame().getHistoryState());
                 }
             } else {
 

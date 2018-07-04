@@ -10,7 +10,8 @@ public class Assets {
 	private static final int width=64, height = 64;
 	
 	public static BufferedImage floor,floor_asfalt, obstacle, brick, plataform, spTile, voyd,build1,build1_2,build2,build2_2,build3,build3_2,platarform;
-        
+        public static BufferedImage Death;
+        public static BufferedImage[] Gun, Potion1, Brain, Clock, Sneaker, Sword, Bomb, Potion2; 
         public static BufferedImage[] B1, B2, B3, B4, jump, jumpball, run, walk_R, walk_L,standing;
         public static BufferedImage F1, F2, F3, F4, F5, F6;
 	
@@ -22,6 +23,7 @@ public class Assets {
                 SpriteSheet Fondo1 = new SpriteSheet(ImageLoader.loadImage("/textures/fc3.png"));
                 SpriteSheet Fondo2 = new SpriteSheet(ImageLoader.loadImage("/textures/FB.png"));
                 SpriteSheet Fondo3 = new SpriteSheet(ImageLoader.loadImage("/textures/FC.png"));
+                SpriteSheet Fondo4 = new SpriteSheet(ImageLoader.loadImage("/textures/muertito.png"));
                 
         //Fondos
                 F1 = Fondo1.crop(0, 0, width * 62, height * 7);
@@ -44,6 +46,41 @@ public class Assets {
                 
                 B4[0] = sheet2.crop(0 ,height*9, width * 3, height);
                 B4[1] = sheet2.crop(width*3, height*9, width * 3, height);
+                
+        //Atack & Store BTNs
+                Gun = new BufferedImage[2];
+                Potion1 = new BufferedImage[2];
+                Brain = new BufferedImage[2];
+                Clock = new BufferedImage[2];
+                Sneaker = new BufferedImage[2];
+                Sword = new BufferedImage[2];
+                Bomb = new BufferedImage[2];
+                Potion2 = new BufferedImage[2];
+        
+                Gun[0] = sheet2.crop(0, height * 4, width, height);
+                Gun[1] = sheet2.crop(0, height * 5, width, height);
+                
+                Potion1[0] = sheet2.crop(width, height * 4, width, height);
+                Potion1[1] = sheet2.crop(width, height * 5, width, height);
+                
+                Brain[0] = sheet2.crop(width * 2, height * 4, width, height);
+                Brain[1] = sheet2.crop(width * 2, height * 5, width, height);
+                
+                Clock[0] = sheet2.crop(width * 3, height * 4, width, height);
+                Clock[1] = sheet2.crop(width * 3, height * 5, width, height);
+                
+                Sneaker[0] = sheet2.crop(width * 4, height * 4, width, height);
+                Sneaker[1] = sheet2.crop(width * 4, height * 5, width, height);
+                
+                Sword[0] = sheet2.crop(width * 5, height * 4, width, height);
+                Sword[1] = sheet2.crop(width * 5, height * 5, width, height);
+                
+                Bomb[0] = sheet2.crop(width * 6, height * 4, width, height);
+                Bomb[1] = sheet2.crop(width * 6, height * 5, width, height);
+                
+                Potion2[0] = sheet2.crop(width * 7, height * 4, width, height);
+                Potion2[1] = sheet2.crop(width * 7, height * 4, width, height);
+                
         //world
 		floor    = sheet2.crop(0, 0, width, height);
 		floor_asfalt = sheet2.crop(width*3, 0, width, height);

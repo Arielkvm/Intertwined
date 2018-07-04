@@ -9,9 +9,10 @@ import dev.game.worlds.World;
 import java.awt.Graphics;
 
 public class GameState extends State {
-    
+
     private World World1;
-    public static String mundo = "src/Worlds/World2.txt";
+    public static String mundo = "src/Worlds/World1.txt";
+
     public World getWorld1() {
         return World1;
     }
@@ -19,10 +20,10 @@ public class GameState extends State {
     public void setWorld1(World World1) {
         this.World1 = World1;
     }
-    
+
     public GameState(Handler handler) {
-       super(handler);
-        World1 = new World(handler,mundo);
+        super(handler);
+        World1 = new World(handler, mundo);
         handler.setWorld(World1);
     }
 
@@ -33,8 +34,7 @@ public class GameState extends State {
 
     @Override
     public void render(Graphics g) {
-       // g.drawImage(Assets.F2, 0, 0, 3968, 500, null);
-        g.drawImage(Assets.F1, 0, 0, 3968, 500, null);
+        g.drawImage(Assets.F2, 0, 0, 3968, 500, null);
         World1.render(g);
     }
 

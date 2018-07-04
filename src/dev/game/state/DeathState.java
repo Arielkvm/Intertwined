@@ -1,6 +1,7 @@
 package dev.game.state;
 
 import dev.game.Handler;
+import dev.game.gfx.Assets;
 import java.awt.Graphics;
 
 /**
@@ -19,7 +20,7 @@ public class DeathState extends State{
 
     @Override
     public void render(Graphics g) {
-    
+    g.drawImage(Assets.Death, 0, 0, 900, 500, null);
     }
     
 }

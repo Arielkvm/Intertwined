@@ -8,10 +8,10 @@ import dev.game.gfx.Assets;
 import dev.game.worlds.World;
 import java.awt.Graphics;
 
-public class GameState2 extends State{
+public class GameState2 extends State {
 
-//     private World World2;
-    
+//    private World World2;
+
     public GameState2(Handler handler) {
         super(handler);
 //        World2 = new World(handler, "src/Worlds/World2.txt");
@@ -19,7 +19,7 @@ public class GameState2 extends State{
     }
 
     @Override
-    public void tick() {    
+    public void tick() {
 //        World2.tick();
     }
 

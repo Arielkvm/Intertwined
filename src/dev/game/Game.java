@@ -10,6 +10,7 @@ import dev.game.gfx.Assets;
 import dev.game.gfx.GCamera;
 import dev.game.input.KeyManager;
 import dev.game.input.MouseManager;
+import dev.game.state.DeathState;
 import dev.game.state.GameState;
 import dev.game.state.GameState2;
 import dev.game.state.GameState3;
@@ -73,13 +74,16 @@ public class Game implements Runnable {
 
         gameState = new GameState(handler);
         gameState2 = new GameState2(handler);
-//        gameState3 = new GameState3(handler);
-//        menuState = new MenuPrincipal(handler);
+        deathstate =  new DeathState(handler);
         State.setState(this.getMenuState());
     }
 
     public State getGameState() {
         return gameState;
+    }
+    
+    public State getDeathState(){
+        return deathstate;
     }
 
     public State getGameState2() {
@@ -97,11 +101,11 @@ public class Game implements Runnable {
     public State getStoreState() {
         return new StoreState(handler);
     }
-    
+
     public State getStoryState() {
         return new StoryState(handler);
     }
-    
+
     public State getHistoryState() {
         return new HistoryState(handler);
     }

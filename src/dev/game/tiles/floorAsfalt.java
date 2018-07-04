@@ -1,7 +1,6 @@
-import dev.game.gfx.Assets;
-import static dev.game.gfx.Assets.floor_asfalt;
-import dev.game.tiles.Tile;
+package dev.game.tiles;
 
+import dev.game.gfx.Assets;
 
 public class floorAsfalt extends Tile{
     

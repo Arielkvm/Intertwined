@@ -87,8 +87,8 @@ public class Player extends Creature {
         State G1 = handler.getGameState();
         State G2  = handler.getGameState2();
 //        xMove = DEFAULT_SPEEDX;
-//            System.out.println(gm.mundo);
-//        if(gm.mundo=="src/Worlds/World1.txt"){
+////            System.out.println(gm.mundo);
+////        if(gm.mundo=="src/Worlds/World1.txt"){
 //            if (handler.getKManager().up && saltar) {
 //                delay = 0;
 //                yMove = DEFAULT_SPEEDY;

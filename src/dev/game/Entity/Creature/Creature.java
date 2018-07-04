@@ -55,7 +55,9 @@ public abstract class Creature extends Entity {
                             State.setState(handler.getGame().getDeathState());
                         }
                     } else {
-                        State.setState(handler.getGame().getStoryState());
+                        handler.getGame().createStage2();
+                        State.setState(handler.getGame().getGameState2());
+//                        State.setState(handler.getGame().getStoryState());
                     }
                 } else {
                     State.setState(handler.getGame().getHistoryState());
@@ -77,7 +79,10 @@ public abstract class Creature extends Entity {
                             State.setState(handler.getGame().getDeathState());
                         }
                     } else {
-                        State.setState(handler.getGame().getStoryState());
+//                        State.setState(handler.getGame().getStoryState());
+                        handler.getGame().createStage2();
+                        State.setState(handler.getGame().getGameState2());
+//                        State.setState(handler.getGame().getStoryState());
                     }
                 } else {
                     State.setState(handler.getGame().getHistoryState());

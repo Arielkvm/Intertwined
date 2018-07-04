@@ -77,7 +77,13 @@ public class Game implements Runnable {
         deathstate =  new DeathState(handler);
         State.setState(this.getMenuState());
     }
-
+     public void createStage(){
+        gameState = new GameState(handler);
+    }
+    public void createStage2(){
+        gameState = null;
+        gameState2 = new GameState2(handler);
+    }
     public State getGameState() {
         return gameState;
     }

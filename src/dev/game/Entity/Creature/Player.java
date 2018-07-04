@@ -86,27 +86,27 @@ public class Player extends Creature {
         State Current  =  handler.getGameState();
         State G1 = handler.getGameState();
         State G2  = handler.getGameState2();
-        xMove = DEFAULT_SPEEDX;
-////            System.out.println(gm.mundo);
-////        if(gm.mundo=="src/Worlds/World1.txt"){
+        if(State.getState().equals(handler.getGame().getGameState2())){
+            xMove = DEFAULT_SPEEDX;
+            
             if (handler.getKManager().up && saltar) {
                 delay = 0;
                 yMove = DEFAULT_SPEEDY;
                 saltar = false;
             }
-//        }else if(gm.mundo == "src/Worlds/World2.txt"){
-//            if (handler.getKManager().up && saltar) {
-//                delay = 0;
-//                yMove = DEFAULT_SPEEDY;
-//                saltar = false;
-//            }
-//            if (handler.getKManager().right) {
-//                xMove+=DEFAULT_SPEEDX;
-//            }
-//            if (handler.getKManager().left) {
-//                xMove-=DEFAULT_SPEEDX;
-//            }
-      //  }
+        }else if(State.getState().equals(handler.getGame().getGameState())){
+            if (handler.getKManager().up && saltar) {
+                delay = 0;
+                yMove = DEFAULT_SPEEDY;
+                saltar = false;
+            }
+            if (handler.getKManager().right) {
+                xMove+=DEFAULT_SPEEDX;
+            }
+            if (handler.getKManager().left) {
+                xMove-=DEFAULT_SPEEDX;
+            }
+        }
             
            
         
@@ -120,7 +120,9 @@ public class Player extends Creature {
             //g.setColor(Color.red);
             //g.fillRect((int)(x + bounds.x - handler.getGCamera().getxOffset()), (int)(y + bounds.y - handler.getGCamera().getyOffset()), bounds.width,bounds.height);
         } else if (State.getState() == handler.getGameState2()) {
-            g.drawImage(A_Left.getCFrame(), (int) (handler.getWorld().getSpawnX() + 1 - handler.getGCamera().getxOffset()), (int) (handler.getWorld().getSpawnY() + 1 - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
+//            g.drawImage(A_Left.getCFrame(), (int) (handler.getWorld().getSpawnX() + 1 - handler.getGCamera().getxOffset()), (int) (handler.getWorld().getSpawnY() + 1 - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
+                g.drawImage(getCAFrame(), (int) (x - handler.getGCamera().getxOffset()), (int) (y - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
+            
         }
     }
 

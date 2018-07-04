@@ -27,6 +27,7 @@ public class MenuPrincipal extends State{
             @Override
             public void onClick() {
                 handler.getMouseManager().setUIManager(null);
+                handler.getGame().createStage();
                 State.setState(handler.getGame().getGameState());
                 
             }}));
@@ -35,7 +36,8 @@ public class MenuPrincipal extends State{
             @Override
             public void onClick() {
                 handler.getMouseManager().setUIManager(null);
-//                State.setState(handler.getGame().getGameState2());
+                 handler.getGame().createStage2();
+                State.setState(handler.getGame().getGameState2());
             }}));
         
         uimanager.addObject(new UIIButton(352, 330, 192, 64, Assets.B3, new ClickListener(){

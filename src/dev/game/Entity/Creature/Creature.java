@@ -47,9 +47,11 @@ public abstract class Creature extends Entity {
             int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.Twidth;
 
             if (!CWTile(tx, (int) (y + bounds.y) / Tile.Theight) && !CWTile(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-
-                x += xMove;
-
+                if (!CheckTile(tx, (int) (y + bounds.y) / Tile.Theight) && !CheckTile(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                    x += xMove;
+                }else{
+                    State.setState(handler.getGame().getMenuState());
+                }
             } else {
 
                 x = tx * Tile.Twidth - bounds.x - bounds.width - 1;
@@ -59,10 +61,11 @@ public abstract class Creature extends Entity {
             int tx = (int) (x + xMove + bounds.x) / Tile.Twidth;
 
             if (!CWTile(tx, (int) (y + bounds.y) / Tile.Theight) && !CWTile(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-
+                if (!CheckTile(tx, (int) (y + bounds.y) / Tile.Theight) && !CheckTile(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
                 x += xMove;
-                
-
+                }else{
+                    State.setState(handler.getGame().getMenuState());
+                }
             } else {
 
                 x = tx * Tile.Twidth + Tile.Twidth - bounds.x;
@@ -76,7 +79,11 @@ public abstract class Creature extends Entity {
         if (yMove < 0) {//up
             int ty = (int) (y + yMove + bounds.y) / Tile.Theight;
             if (!CWTile((int) (x + bounds.x) / Tile.Twidth, ty) && !CWTile((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                if (!CheckTile((int) (x + bounds.x) / Tile.Twidth, ty) && !CheckTile((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
                 y += yMove;
+                }else{
+                State.setState(handler.getGame().getMenuState());
+                }
             } else {
                 y = ty * Tile.Theight + Tile.Theight - bounds.y;
 
@@ -84,7 +91,11 @@ public abstract class Creature extends Entity {
         } else if (yMove > 0) {//down
             int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.Theight;
             if (!CWTile((int) (x + bounds.x) / Tile.Twidth, ty) && !CWTile((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                if (!CheckTile((int) (x + bounds.x) / Tile.Twidth, ty) && !CheckTile((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
                 y += yMove;
+                }else{
+                    State.setState(handler.getGame().getMenuState());
+                }
             } else {
 
                 y = ty * Tile.Theight - bounds.y - bounds.height - 1;

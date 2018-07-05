@@ -16,6 +16,7 @@ import dev.game.state.GameState2;
 import dev.game.state.GameState3;
 import dev.game.state.HistoryState;
 import dev.game.state.MenuPrincipal;
+import dev.game.state.SettingsState;
 import dev.game.state.State;
 import dev.game.state.StoreState;
 import dev.game.state.StoryState;
@@ -41,6 +42,8 @@ public class Game implements Runnable {
     public State deathstate;
     public State storystate;
     public State historystate;
+    public State settingsstate;
+
 
     //Input
     private KeyManager keyManager;
@@ -84,6 +87,11 @@ public class Game implements Runnable {
         gameState = null;
         gameState2 = new GameState2(handler);
     }
+    
+    public State getSettingsstate() {
+        return new SettingsState(handler);
+    }
+    
     public State getGameState() {
         return gameState;
     }

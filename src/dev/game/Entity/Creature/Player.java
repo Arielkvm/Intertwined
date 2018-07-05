@@ -16,15 +16,15 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 public class Player extends Creature {
-    
+
     GameState gm;
-    
+    private int Points;
     private float delay = 5.0f;
     private boolean saltar = false;
     private boolean standing = true;
 
     //Kawaii ❤❤❤ Animations 
-    private Animation A_Run, A_Jump, A_Left, A_Right,A_Standing,A_Jump2;
+    private Animation A_Run, A_Jump, A_Left, A_Right, A_Standing, A_Jump2;
 
     public Player(Handler handler, float x, float y) {
         super(handler, x, y, Creature.DEFAULT_WIDTH, Creature.DEFAULT_HEIGHT);
@@ -41,7 +41,7 @@ public class Player extends Creature {
         A_Left = new Animation(500, Assets.walk_L);
         A_Right = new Animation(500, Assets.walk_R);
         A_Standing = new Animation(0, Assets.standing);
-        
+
     }
 
     @Override
@@ -83,33 +83,31 @@ public class Player extends Creature {
         xMove = 0;
         yMove = 0;
         DEFAULT_SPEEDX = handler.getWorld().getSpeedx();
-        State Current  =  handler.getGameState();
+        State Current = handler.getGameState();
         State G1 = handler.getGameState();
-        State G2  = handler.getGameState2();
-        if(State.getState().equals(handler.getGame().getGameState2())){
+        State G2 = handler.getGameState2();
+        if (State.getState().equals(handler.getGame().getGameState2())) {
             xMove = DEFAULT_SPEEDX;
-            
+
             if (handler.getKManager().up && saltar) {
                 delay = 0;
                 yMove = DEFAULT_SPEEDY;
                 saltar = false;
             }
-        }else if(State.getState().equals(handler.getGame().getGameState())){
+        } else if (State.getState().equals(handler.getGame().getGameState())) {
             if (handler.getKManager().up && saltar) {
                 delay = 0;
                 yMove = DEFAULT_SPEEDY;
                 saltar = false;
             }
             if (handler.getKManager().right) {
-                xMove+=DEFAULT_SPEEDX;
+                xMove += DEFAULT_SPEEDX;
             }
             if (handler.getKManager().left) {
-                xMove-=DEFAULT_SPEEDX;
+                xMove -= DEFAULT_SPEEDX;
             }
         }
-            
-           
-        
+
     }
 
     @Override
@@ -121,8 +119,8 @@ public class Player extends Creature {
             //g.fillRect((int)(x + bounds.x - handler.getGCamera().getxOffset()), (int)(y + bounds.y - handler.getGCamera().getyOffset()), bounds.width,bounds.height);
         } else if (State.getState() == handler.getGameState2()) {
 //            g.drawImage(A_Left.getCFrame(), (int) (handler.getWorld().getSpawnX() + 1 - handler.getGCamera().getxOffset()), (int) (handler.getWorld().getSpawnY() + 1 - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
-                g.drawImage(getCAFrame(), (int) (x - handler.getGCamera().getxOffset()), (int) (y - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
-            
+            g.drawImage(getCAFrame(), (int) (x - handler.getGCamera().getxOffset()), (int) (y - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
+
         }
     }
 
@@ -131,12 +129,20 @@ public class Player extends Creature {
             return A_Left.getCFrame();
         } else if (xMove > 0) {
             return A_Right.getCFrame();
-        } else if (saltar==false) {
+        } else if (saltar == false) {
             return A_Jump.getCFrame();
-        }else if(standing==true){
+        } else if (standing == true) {
             return A_Standing.getCFrame();
-        }else{
+        } else {
             return A_Standing.getCFrame();
         }
+    }
+
+    public int getPoints() {
+        return Points;
+    }
+
+    public void setPoints(int Points) {
+        this.Points = Points;
     }
 }

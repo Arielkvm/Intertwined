@@ -23,9 +23,10 @@ public class Tile {
     public static Tile edificio1_1 = new Edificio1_1(9);
     public static Tile edificio1_2 = new Edificio1_2(10);
     public static Tile platarform = new platarform(11);
-   public static Tile floor_asfalt = new floorAsfalt(12);
-   public static Tile death = new DeathTile(13);
-    
+    public static Tile floor_asfalt = new floorAsfalt(12);
+    public static Tile death = new DeathTile(13);
+    public static Tile Diamond = new DiamondTile(14);
+
     protected BufferedImage texture;
     protected final int id;
     public static final int Twidth = 32, Theight = 32;
@@ -56,7 +57,7 @@ public class Tile {
     public boolean isCP2H() {
         return false;
     }
-    
+
     public boolean isCP2H2() {
         return false;
     }
@@ -64,8 +65,14 @@ public class Tile {
     public boolean isCP2D() {
         return false;
     }
+    
+    public boolean isMoney(){
+        return false;
+    }
 
     public int getId() {
         return id;
     }
+    
+    
 }

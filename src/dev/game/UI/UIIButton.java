@@ -18,6 +18,7 @@ public class UIIButton extends UIObject{
         this.click = click;
     }
 
+
     @Override
     public void tick() {}
 

@@ -10,7 +10,7 @@ public class Assets {
 	private static final int width=64, height = 64;
 	
 	public static BufferedImage floor,floor_asfalt, obstacle, brick, plataform, spTile, voyd,build1,build1_2,build2,build2_2,build3,build3_2,platarform;
-        public static BufferedImage Death;
+        public static BufferedImage Death, diamond;
         public static BufferedImage[] Gun, Potion1, Brain, Clock, Sneaker, Sword, Bomb, Potion2, Back, Next; 
         public static BufferedImage[] B1, B2, B3, B4, jump, jumpball, run, walk_R, walk_L,standing;
         public static BufferedImage F1, F2, F3, F4, F5, F6;
@@ -24,7 +24,9 @@ public class Assets {
                 SpriteSheet Fondo2 = new SpriteSheet(ImageLoader.loadImage("/textures/FB.png"));
                 SpriteSheet Fondo3 = new SpriteSheet(ImageLoader.loadImage("/textures/FC.png"));
                 SpriteSheet Fondo4 = new SpriteSheet(ImageLoader.loadImage("/textures/muertito.png"));
-                
+                SpriteSheet dia = new SpriteSheet(ImageLoader.loadImage("/textures/diamond.png"));
+        //Diamond
+                diamond = dia.crop(0, 0, width, height);
         //Fondos
                 F1 = Fondo1.crop(0, 0, width * 62, height * 7);
                 F2 = Fondo2.crop(0, 0, width * 50, height * 7);

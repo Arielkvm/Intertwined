@@ -10,24 +10,18 @@ import java.awt.Graphics;
 /**
  * @author EFGK
  */
-public class HistoryState extends State{
+public class SettingsState extends State{
     
     public UIManager STUI;
     int tm = 100;
 
-    public HistoryState(Handler handler) {
+    public SettingsState(Handler handler) {
         super(handler);
         
         STUI = new UIManager(handler);
         handler.getMouseManager().setUIManager(STUI);
                 
         STUI.addObject(new UIIButton(25, 400, 150, 75, Assets.Back, new ClickListener(){
-            @Override
-            public void onClick(){
-                State.setState(handler.getGame().getMenuState());
-            }}));
-        
-        STUI.addObject(new UIIButton(725, 400, 150, 75, Assets.Next, new ClickListener(){
             @Override
             public void onClick(){
                 State.setState(handler.getGame().getMenuState());

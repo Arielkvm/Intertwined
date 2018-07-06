@@ -12,19 +12,34 @@ public class Assets {
 	public static BufferedImage floor,floor_asfalt, obstacle, brick, plataform, spTile, voyd,build1,build1_2,build2,build2_2,build3,build3_2,platarform;
         public static BufferedImage Death, diamond;
         public static BufferedImage[] Gun, Potion1, Brain, Clock, Sneaker, Sword, Bomb, Potion2, Back, Next; 
-        public static BufferedImage[] B1, B2, B3, B4, jump, jumpball, run, walk_R, walk_L,standing;
+        public static BufferedImage[] B1, B2, B3, B4, jump, jumpball, run, walk_R, walk_L,standing, M_L;
         public static BufferedImage F1, F2, F3, F4, F5, F6;
 	
 	public static void init(){
 		
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/grid2.png"));
 		SpriteSheet sheet2 = new SpriteSheet(ImageLoader.loadImage("/textures/Sheet1.png"));
+                SpriteSheet sheet3 = new SpriteSheet(ImageLoader.loadImage("/textures/Sheet2.png"));
                 SpriteSheet BTN = new SpriteSheet(ImageLoader.loadImage("/textures/SpriteSheet.png"));
                 SpriteSheet Fondo1 = new SpriteSheet(ImageLoader.loadImage("/textures/fc3.png"));
                 SpriteSheet Fondo2 = new SpriteSheet(ImageLoader.loadImage("/textures/FB.png"));
                 SpriteSheet Fondo3 = new SpriteSheet(ImageLoader.loadImage("/textures/FC.png"));
                 SpriteSheet Fondo4 = new SpriteSheet(ImageLoader.loadImage("/textures/muertito.png"));
                 SpriteSheet dia = new SpriteSheet(ImageLoader.loadImage("/textures/diamond.png"));
+        //Money - Life
+                M_L = new BufferedImage[11];
+                
+                M_L[0] = sheet3.crop(0, height, width, height);
+                M_L[1] = sheet3.crop(0, 0, width, height);
+                M_L[2] = sheet3.crop(width, 0, width, height);
+                M_L[3] = sheet3.crop(width * 2, 0, width, height);
+                M_L[4] = sheet3.crop(width * 3, 0, width, height);
+                M_L[5] = sheet3.crop(width * 4, 0, width, height);
+                M_L[6] = sheet3.crop(width * 5, 0, width, height);
+                M_L[7] = sheet3.crop(width * 6, 0, width, height);
+                M_L[8] = sheet3.crop(width * 7, 0, width, height);
+                M_L[9] = sheet3.crop(width * 8, 0, width, height);
+                M_L[10] = sheet3.crop(width * 9, 0, width, height);
         //Diamond
                 diamond = dia.crop(0, 0, width, height);
         //Fondos

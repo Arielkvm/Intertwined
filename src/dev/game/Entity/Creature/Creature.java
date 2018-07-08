@@ -5,11 +5,12 @@ package dev.game.Entity.Creature;
  */
 import dev.game.Entity.Entity;
 import dev.game.Handler;
+import dev.game.state.MenuPrincipal;
 import dev.game.state.State;
 import dev.game.tiles.Tile;
 
 public abstract class Creature extends Entity {
-
+    MenuPrincipal menu;
     protected int health;
     protected float speedx, speedy;
     protected float xMove, yMove;
@@ -68,6 +69,7 @@ public abstract class Creature extends Entity {
                             }
                         } else {
                             State.setState(handler.getGame().getDeathState());
+                           
                         }
                     } else {
                         State.setState(handler.getGame().getStoryState());

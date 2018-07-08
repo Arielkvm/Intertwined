@@ -9,10 +9,36 @@ import dev.game.UI.UIIButton;
 import dev.game.UI.UIManager;
 import dev.game.gfx.Assets;
 import java.awt.Graphics;
+import java.io.File;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import music.Musica;
 
-public class MenuPrincipal extends State {
+public class MenuPrincipal extends State{
     
     public UIManager uimanager;
+    Musica musica = new Musica();
+//    public void music(){
+//        File Music = new File("src/music/UndertaleAnotherMedium.wav");
+//        PlaySound(Music);
+//    }
+//    static void PlaySound(File Sound){
+//        try{
+//            Clip clip = AudioSystem.getClip();
+//            clip.open(AudioSystem.getAudioInputStream(Sound));
+//            clip.start();
+//            Thread.sleep(clip.getMicrosecondLength()/1000);
+//        }catch(Exception e){
+//            
+//        }
+//    }
+    
+    public Musica getMusica(){
+        return musica;
+    }
+    public void parar(){
+        musica.detener();
+    }
     
     public MenuPrincipal(Handler handler) {
         super(handler);
@@ -23,10 +49,10 @@ public class MenuPrincipal extends State {
             @Override
             public void onClick() {
                 handler.getMouseManager().setUIManager(null);
-//                handler.getGame().createStage1_1();
-//                State.setState(handler.getGame().getGameState());
-                handler.getGame().createStage1_2();
-                State.setState(handler.getGame().getGameState1_5());
+                handler.getGame().createStage1_1();
+                State.setState(handler.getGame().getGameState());
+//                handler.getGame().createStage1_2();
+//                State.setState(handler.getGame().getGameState1_5());
                 
             }
         }));

@@ -24,12 +24,13 @@ public class StoryState extends State{
         STUI.addObject(new UIIButton(25, 400, 150, 75, Assets.Back, new ClickListener(){
             @Override
             public void onClick(){
-                State.setState(handler.getGame().getMenuState());
+                State.setState(handler.getGame().getGameState2());
             }}));
         
         STUI.addObject(new UIIButton(725, 400, 150, 75, Assets.Next, new ClickListener(){
             @Override
             public void onClick(){
+                handler.getGame().createStage2_1();
                 State.setState(handler.getGame().getMenuState());
             }}));
     }

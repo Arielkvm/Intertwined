@@ -60,7 +60,7 @@ public abstract class Creature extends Entity {
                                         State.setState(handler.getGame().getGameState2_5());
                                     }
                                 } else {
-                                    handler.getGame().createStage1_2();
+                                    handler.getGame().createStage1_5();
                                     State.setState(handler.getGame().getGameState1_5());
                                 }
                             } else {
@@ -98,7 +98,7 @@ public abstract class Creature extends Entity {
                                         State.setState(handler.getGame().getGameState2_5());
                                     }
                                 } else {
-                                    handler.getGame().createStage1_2();
+                                    handler.getGame().createStage1_5();
                                     State.setState(handler.getGame().getGameState1_5());
                                 }
                             } else {
@@ -140,7 +140,7 @@ public abstract class Creature extends Entity {
                                         State.setState(handler.getGame().getGameState2_5());
                                     }
                                 } else {
-                                    handler.getGame().createStage1_2();
+                                    handler.getGame().createStage1_5();
                                     State.setState(handler.getGame().getGameState1_5());
                                 }
                             } else {
@@ -175,7 +175,7 @@ public abstract class Creature extends Entity {
                                         State.setState(handler.getGame().getGameState2_5());
                                     }
                                 } else {
-                                    handler.getGame().createStage1_2();
+                                    handler.getGame().createStage1_5();
                                     State.setState(handler.getGame().getGameState1_5());
                                 }
                             } else {

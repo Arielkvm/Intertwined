@@ -7,9 +7,6 @@ import dev.game.Handler;
 import dev.game.gfx.Assets;
 import dev.game.worlds.World;
 import java.awt.Graphics;
-import java.io.File;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 
 public class GameState extends State {
 
@@ -25,10 +22,6 @@ public class GameState extends State {
         handler.setWorld(World1);
         
     }
-//    public void music(){
-//        File Music = new File("src/music/UndertaleAnotherMedium.wav");
-//        PlaySound(Music);
-//    }
     
     @Override
     public void tick() {

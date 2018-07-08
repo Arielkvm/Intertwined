@@ -18,7 +18,7 @@ import java.awt.image.BufferedImage;
 public class Player extends Creature {
 
     GameState gm;
-    private int Points;
+    private int Points = 0;
     private float delay = 5.0f;
     private boolean saltar = false;
     private boolean standing = true;
@@ -75,8 +75,13 @@ public class Player extends Creature {
 
         getInput();
         move();
+//        Center();
         handler.getGCamera().centerOE(this);
     }
+    
+//    public void Center(){
+//        handler.getGCamera().centerOE(this);
+//    }
 
     private void getInput() {
 
@@ -113,15 +118,17 @@ public class Player extends Creature {
     @Override
     public void render(Graphics g) {
 
-        if (State.getState() == handler.getGameState()) {
+//        if (State.getState() == handler.getGameState()) {
             g.drawImage(getCAFrame(), (int) (x - handler.getGCamera().getxOffset()), (int) (y - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
             //g.setColor(Color.red);
             //g.fillRect((int)(x + bounds.x - handler.getGCamera().getxOffset()), (int)(y + bounds.y - handler.getGCamera().getyOffset()), bounds.width,bounds.height);
-        } else if (State.getState() == handler.getGameState2()) {
+//        } else if (State.getState() == handler.getGameState2()) {
 //            g.drawImage(A_Left.getCFrame(), (int) (handler.getWorld().getSpawnX() + 1 - handler.getGCamera().getxOffset()), (int) (handler.getWorld().getSpawnY() + 1 - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
-            g.drawImage(getCAFrame(), (int) (x - handler.getGCamera().getxOffset()), (int) (y - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
-
-        }
+//            g.drawImage(getCAFrame(), (int) (x - handler.getGCamera().getxOffset()), (int) (y - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
+//        }else if (State.getState() == handler.getGameState1_5()) {
+//            g.drawImage(A_Left.getCFrame(), (int) (handler.getWorld().getSpawnX() + 1 - handler.getGCamera().getxOffset()), (int) (handler.getWorld().getSpawnY() + 1 - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
+//            g.drawImage(getCAFrame(), (int) (x - handler.getGCamera().getxOffset()), (int) (y - handler.getGCamera().getyOffset()), width * 2, height * 2, null);
+//        }
     }
 
     private BufferedImage getCAFrame() {

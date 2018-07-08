@@ -90,7 +90,7 @@ public class Game implements Runnable {
         gameState = new GameState(handler);
     }
 
-    public void createStage1_2() {
+    public void createStage1_5() {
         gameState = null;
         gameState1_5 = new GameState1_5(handler);
     }

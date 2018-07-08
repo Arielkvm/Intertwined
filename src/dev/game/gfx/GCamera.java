@@ -35,15 +35,15 @@ public class GCamera {
     }
 
     public void centerOE(Entity e) {
-        if (State.getState() == handler.getGameState()) {
+//        if (State.getState() == handler.getGameState()) {
             xOffset = e.getX() - handler.getWidth() / 2;
             yOffset = e.getY() - handler.getHeight() / 2;
             CBSpace();
-        } else if (State.getState() == handler.getGameState2()) {
-            xOffset = e.getX() - handler.getWidth() / 2 + e.getWidth() / 2;
-            yOffset = e.getY() - handler.getHeight() / 2 + e.getHeight() / 2;
-            CBSpace();
-        }
+//        } else if (State.getState() == handler.getGameState2()) {
+//            xOffset = e.getX() - handler.getWidth() / 2 + e.getWidth() / 2;
+//            yOffset = e.getY() - handler.getHeight() / 2 + e.getHeight() / 2;
+//            CBSpace();
+//        }
     }
 
     public void move(float xAmt, float yAmt) {

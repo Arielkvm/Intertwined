@@ -33,6 +33,10 @@ public class Handler {
         return game.getGameState2();
     }
     
+    public State getGameState1_5(){
+        return game.getGameState1_5();
+    }
+    
     public KeyManager getKManager(){
         return game.getKeyManager();
     }

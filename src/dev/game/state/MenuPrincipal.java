@@ -8,11 +8,13 @@ import dev.game.UI.ClickListener;
 import dev.game.UI.UIIButton;
 import dev.game.UI.UIManager;
 import dev.game.gfx.Assets;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import music.Musica;
 
-public class MenuPrincipal extends State{
-    
+public class MenuPrincipal extends State {
+
     public UIManager uimanager;
     Musica musica = new Musica();
 //    public void music(){
@@ -29,29 +31,30 @@ public class MenuPrincipal extends State{
 //            
 //        }
 //    }
-    
-    public Musica getMusica(){
+
+    public Musica getMusica() {
         return musica;
     }
-    public void parar(){
+
+    public void parar() {
         musica.detener();
     }
-    
+
     public MenuPrincipal(Handler handler) {
         super(handler);
         uimanager = new UIManager(handler);
         handler.getMouseManager().setUIManager(uimanager);
-        
+
         uimanager.addObject(new UIIButton(352, 200, 192, 64, Assets.B1, new ClickListener() {
             @Override
             public void onClick() {
                 handler.getMouseManager().setUIManager(null);
                 handler.getGame().createStage1_1();
                 State.setState(handler.getGame().getGameState());
-               musica.start();
-            }}));
+                musica.start();
+            }
+        }));
 
-        
         uimanager.addObject(new UIIButton(352, 265, 192, 64, Assets.B2, new ClickListener() {
             @Override
             public void onClick() {
@@ -59,7 +62,7 @@ public class MenuPrincipal extends State{
                 State.setState(handler.getGame().getSettingsstate());
             }
         }));
-        
+
         uimanager.addObject(new UIIButton(352, 330, 192, 64, Assets.B3, new ClickListener() {
             @Override
             public void onClick() {
@@ -67,7 +70,7 @@ public class MenuPrincipal extends State{
                 State.setState(handler.getGame().getStoreState());
             }
         }));
-        
+
         uimanager.addObject(new UIIButton(352, 395, 192, 64, Assets.B4, new ClickListener() {
             @Override
             public void onClick() {
@@ -84,17 +87,23 @@ public class MenuPrincipal extends State{
             }
         }));
     }
-    
+
     @Override
     public void tick() {
         uimanager.tick();
     }
-    
+
     @Override
     public void render(Graphics g) {
         g.drawImage(Assets.F6, 0, 0, 900, 500, null);
-        uimanager.render(g);
         
+        Font font = new Font("Rockwell", Font.ROMAN_BASELINE, 60);
+        g.setFont(font);
+        g.setColor(Color.WHITE);
+        g.drawString("Intertwined", (handler.getWidth() / 2) - 150, 150);
+
+        uimanager.render(g);
+
     }
-    
+
 }

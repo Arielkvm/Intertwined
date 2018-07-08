@@ -10,8 +10,8 @@ public class Assets {
     private static final int width = 64, height = 64;
 
     public static BufferedImage floor, floor_asfalt, obstacle, brick, plataform, spTile, voyd, build1, build1_2, build2, build2_2, build3, build3_2, platarform;
-    public static BufferedImage Death, diamond, Spike;
-    public static BufferedImage[] Gun, Potion1, Brain, Clock, Sneaker, Sword, Bomb, Potion2, Back, Next;
+    public static BufferedImage Death, diamond, Spike, Player, Enemy, Win, Logo, ST1, ST2;
+    public static BufferedImage[] Gun, Potion1, Brain, Clock, Sneaker, Sword, Bomb, Potion2, Back, Next, PAA, EAA;
     public static BufferedImage[] B1, B2, B3, B4, jump, jumpball, run, walk_R, walk_L, standing, M, L;
     public static BufferedImage F1, F2, F3, F4, F5, F6;
 
@@ -27,6 +27,49 @@ public class Assets {
         SpriteSheet Fondo4 = new SpriteSheet(ImageLoader.loadImage("/textures/muertito.png"));
         SpriteSheet dia = new SpriteSheet(ImageLoader.loadImage("/textures/diamond.png"));
         SpriteSheet SPK = new SpriteSheet(ImageLoader.loadImage("/textures/Spike.png"));
+        SpriteSheet W = new SpriteSheet(ImageLoader.loadImage("/textures/Win.png"));
+        SpriteSheet LG = new SpriteSheet(ImageLoader.loadImage("/textures/Logo.png"));
+        SpriteSheet Story1 = new SpriteSheet(ImageLoader.loadImage("/textures/story1.png"));
+        SpriteSheet Story2 = new SpriteSheet(ImageLoader.loadImage("/textures/story2.png"));
+        
+        //Last Assets
+        ST1 = Story1.crop(0, 0, 900, 500);
+        ST2 = Story2.crop(0, 0, 900, 500);
+        Win = W.crop(0, 0, 900, 500);
+        Logo = LG.crop(0, 0, width * 4, height);
+
+        //player & Enemy
+        Player = sheet2.crop(width * 8, height * 4, width, height);
+        Enemy = sheet2.crop(width * 9, height * 4, width, height);
+
+        //Attack Arrays
+        PAA = new BufferedImage[5];
+        EAA = new BufferedImage[5];
+
+        //Player
+        //Gun
+        PAA[0] = sheet2.crop(0, height * 4, width, height);
+        //Potion
+        PAA[1] = sheet2.crop(width, height * 4, width, height);
+        //Sword
+        PAA[2] = sheet2.crop(width * 5, height * 4, width, height);
+        //bomb
+        PAA[3] = sheet2.crop(width * 6, height * 4, width, height);
+        //voyd
+        PAA[4] = sheet.crop(0, height * 2, width, height);
+
+        //Enemy
+        //Gun
+        EAA[0] = sheet2.crop(0, height * 5, width, height);
+        //Bomb 2
+        EAA[1] = sheet2.crop(width * 6, height * 5, width, height);
+        //Sword
+        EAA[2] = sheet2.crop(width * 5, height * 5, width, height);
+        //Bomb
+        EAA[3] = sheet2.crop(width * 6, height * 5, width, height);
+        //voyd
+        EAA[4] = sheet.crop(0, height * 2, width, height);
+
         //Money & Life
         M = new BufferedImage[11];
 
@@ -44,27 +87,27 @@ public class Assets {
 
         L = new BufferedImage[21];
 
-        L[0] = sheet3.crop(0, height*2, width, height);
-        L[1] = sheet3.crop(width, height*2, width, height);
-        L[2] = sheet3.crop(width *2, height*2, width, height);
-        L[3] = sheet3.crop(width * 3, height*2, width, height);
-        L[4] = sheet3.crop(width * 4, height*2, width, height);
-        L[5] = sheet3.crop(width * 5, height*2, width, height);
-        L[6] = sheet3.crop(width * 6, height*2, width, height);
-        L[7] = sheet3.crop(width * 7, height*2, width, height);
-        L[8] = sheet3.crop(width * 8, height*2, width, height);
-        L[9] = sheet3.crop(width * 9, height*2, width, height);
-        L[10] = sheet3.crop(0, height*3, width, height);
-        L[11] = sheet3.crop(width, height*3, width, height);
-        L[12] = sheet3.crop(width*2, height*3, width, height);
-        L[13] = sheet3.crop(width * 3, height*3, width, height);
-        L[14] = sheet3.crop(width * 4, height*3, width, height);
-        L[15] = sheet3.crop(width * 5, height*3, width, height);
-        L[16] = sheet3.crop(width * 6, height*3, width, height);
-        L[17] = sheet3.crop(width * 7, height*3, width, height);
-        L[18] = sheet3.crop(width * 8, height*3, width, height);
-        L[19] = sheet3.crop(width * 9, height*3, width, height);
-        L[20] = sheet3.crop(0, height*4, width, height);
+        L[0] = sheet3.crop(0, height * 2, width, height);
+        L[1] = sheet3.crop(width, height * 2, width, height);
+        L[2] = sheet3.crop(width * 2, height * 2, width, height);
+        L[3] = sheet3.crop(width * 3, height * 2, width, height);
+        L[4] = sheet3.crop(width * 4, height * 2, width, height);
+        L[5] = sheet3.crop(width * 5, height * 2, width, height);
+        L[6] = sheet3.crop(width * 6, height * 2, width, height);
+        L[7] = sheet3.crop(width * 7, height * 2, width, height);
+        L[8] = sheet3.crop(width * 8, height * 2, width, height);
+        L[9] = sheet3.crop(width * 9, height * 2, width, height);
+        L[10] = sheet3.crop(0, height * 3, width, height);
+        L[11] = sheet3.crop(width, height * 3, width, height);
+        L[12] = sheet3.crop(width * 2, height * 3, width, height);
+        L[13] = sheet3.crop(width * 3, height * 3, width, height);
+        L[14] = sheet3.crop(width * 4, height * 3, width, height);
+        L[15] = sheet3.crop(width * 5, height * 3, width, height);
+        L[16] = sheet3.crop(width * 6, height * 3, width, height);
+        L[17] = sheet3.crop(width * 7, height * 3, width, height);
+        L[18] = sheet3.crop(width * 8, height * 3, width, height);
+        L[19] = sheet3.crop(width * 9, height * 3, width, height);
+        L[20] = sheet3.crop(0, height * 4, width, height);
         //Diamond & Spike
         diamond = dia.crop(0, 0, width, height);
         Spike = SPK.crop(0, 0, width, height);
@@ -110,6 +153,7 @@ public class Assets {
         Sword = new BufferedImage[2];
         Bomb = new BufferedImage[2];
         Potion2 = new BufferedImage[2];
+        
         /*atack*/
         Gun[0] = sheet2.crop(0, height * 4, width, height);
         Gun[1] = sheet2.crop(0, height * 5, width, height);

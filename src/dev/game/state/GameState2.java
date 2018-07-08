@@ -33,7 +33,7 @@ public class GameState2 extends State{
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.F1, 0, 0, 3968, 448, null);
+        g.drawImage(Assets.F1, 0, 0, 3968, 500, null);
         World2.render(g);
     }
 

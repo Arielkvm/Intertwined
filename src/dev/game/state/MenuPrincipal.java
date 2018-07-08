@@ -96,11 +96,7 @@ public class MenuPrincipal extends State {
     @Override
     public void render(Graphics g) {
         g.drawImage(Assets.F6, 0, 0, 900, 500, null);
-        
-        Font font = new Font("Rockwell", Font.ROMAN_BASELINE, 60);
-        g.setFont(font);
-        g.setColor(Color.WHITE);
-        g.drawString("Intertwined", (handler.getWidth() / 2) - 150, 150);
+        g.drawImage(Assets.Logo, 250, 64, 394, 96, null);
 
         uimanager.render(g);
 

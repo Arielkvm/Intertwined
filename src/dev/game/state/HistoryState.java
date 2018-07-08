@@ -42,6 +42,7 @@ public class HistoryState extends State{
     @Override
     public void render(Graphics g) {
         g.drawImage(Assets.F6, 0, 0, 900, 500, null);
+        g.drawImage(Assets.ST1, 0, 50, 800, 400, null);
         STUI.render(g);
     }
     

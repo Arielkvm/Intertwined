@@ -227,9 +227,7 @@ public class JuegoDao implements metodos<Juego>{
         ResultSet rs;
         try{
             ps= con.getCnx().prepareStatement(SQL_READ);
-
             ps.setString(1, key.toString());
-
             rs = ps.executeQuery();
 
             while(rs.next()){
@@ -247,7 +245,32 @@ public class JuegoDao implements metodos<Juego>{
         return f;
     }
 
+    @Override
+    public Juego getTop(Object key) {
+        Juego f = null;
+        
+        PreparedStatement ps;
+        ResultSet rs;
+        try{
+            ps= con.getCnx().prepareStatement(SQL_TOP);
+            ps.setString(1, key.toString());
+            rs = ps.executeQuery();
 
+            while(rs.next()){
+                f = new Juego(rs.getInt(1),rs.getBoolean(2),rs.getBoolean(3),rs.getBoolean(4),rs.getBoolean(5),rs.getBoolean(6));
+            }
+
+        }catch (SQLException ex){
+            System.out.println(ex.getMessage());
+            Logger.getLogger(JuegoDao.class.getName()).log(Level.SEVERE,null,ex);
+
+        }finally{
+            con.cerrarConexion();
+        }
+
+        return f;
+    }
+    
 
     @Override
     public ArrayList<Juego> readAll() {

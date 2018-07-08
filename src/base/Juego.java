@@ -30,6 +30,17 @@ public class Juego {
         this.curacion = curacion;
     }
 
+    public Juego(int id, int puntaje) {
+        this.id = id;
+        this.puntaje = puntaje;
+    }
+
+    public Juego(int id, boolean arma1) {
+        this.id = id;
+        this.arma1 = arma1;
+    }
+    
+
     public int getId() {
         return id;
     }

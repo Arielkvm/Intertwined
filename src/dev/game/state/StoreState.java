@@ -1,5 +1,7 @@
 package dev.game.state;
 
+import base.Juego;
+import base.JuegoDao;
 import dev.game.Handler;
 import dev.game.UI.ClickListener;
 import dev.game.UI.UIIButton;
@@ -20,11 +22,18 @@ public class StoreState extends State{
         
         STUI = new UIManager(handler);
         handler.getMouseManager().setUIManager(STUI);
+        Juego ju = new Juego();
                 
         STUI.addObject(new UIIButton(250, 150, tm, tm, Assets.Brain, new ClickListener(){
             @Override
             public void onClick(){
-                
+////                JuegoDao fd = new JuegoDao();
+////                Juego f = new Juego(ju.getId(),ju.getCuracion());
+////                if(fd.update(f)){
+////                    System.out.println("it worked");
+////                }else{
+////                    System.out.println("shit it didn't ");
+//                }
             }}));
         
         STUI.addObject(new UIIButton(500, 150, tm, tm, Assets.Clock, new ClickListener(){

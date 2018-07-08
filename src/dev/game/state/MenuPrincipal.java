@@ -9,9 +9,6 @@ import dev.game.UI.UIIButton;
 import dev.game.UI.UIManager;
 import dev.game.gfx.Assets;
 import java.awt.Graphics;
-import java.io.File;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import music.Musica;
 
 public class MenuPrincipal extends State{
@@ -51,11 +48,9 @@ public class MenuPrincipal extends State{
                 handler.getMouseManager().setUIManager(null);
                 handler.getGame().createStage1_1();
                 State.setState(handler.getGame().getGameState());
-//                handler.getGame().createStage1_2();
-//                State.setState(handler.getGame().getGameState1_5());
-                
-            }
-        }));
+               musica.start();
+            }}));
+
         
         uimanager.addObject(new UIIButton(352, 265, 192, 64, Assets.B2, new ClickListener() {
             @Override

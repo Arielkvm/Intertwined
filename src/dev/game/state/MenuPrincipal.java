@@ -9,9 +9,6 @@ import dev.game.UI.UIIButton;
 import dev.game.UI.UIManager;
 import dev.game.gfx.Assets;
 import java.awt.Graphics;
-import java.io.File;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import music.Musica;
 
 public class MenuPrincipal extends State{
@@ -99,4 +96,5 @@ public class MenuPrincipal extends State{
         uimanager.render(g);
         
     }
+    
 }

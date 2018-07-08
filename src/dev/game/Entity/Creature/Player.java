@@ -86,7 +86,7 @@ public class Player extends Creature {
         State Current = handler.getGameState();
         State G1 = handler.getGameState();
         State G2 = handler.getGameState2();
-        if (State.getState().equals(handler.getGame().getGameState2())) {
+        if ((State.getState().equals(handler.getGame().getGameState())) || (State.getState().equals(handler.getGame().getGameState1_5()))) {
             xMove = DEFAULT_SPEEDX;
 
             if (handler.getKManager().up && saltar) {
@@ -94,7 +94,7 @@ public class Player extends Creature {
                 yMove = DEFAULT_SPEEDY;
                 saltar = false;
             }
-        } else if (State.getState().equals(handler.getGame().getGameState())) {
+        } else if ((State.getState().equals(handler.getGame().getGameState2())) || (State.getState().equals(handler.getGame().getGameState2_5()))) {
             if (handler.getKManager().up && saltar) {
                 delay = 0;
                 yMove = DEFAULT_SPEEDY;

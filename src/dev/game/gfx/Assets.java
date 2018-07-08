@@ -10,7 +10,7 @@ public class Assets {
 	private static final int width=64, height = 64;
 	
 	public static BufferedImage floor,floor_asfalt, obstacle, brick, plataform, spTile, voyd,build1,build1_2,build2,build2_2,build3,build3_2,platarform;
-        public static BufferedImage Death, diamond;
+        public static BufferedImage Death, diamond, Spike;
         public static BufferedImage[] Gun, Potion1, Brain, Clock, Sneaker, Sword, Bomb, Potion2, Back, Next; 
         public static BufferedImage[] B1, B2, B3, B4, jump, jumpball, run, walk_R, walk_L,standing, M_L;
         public static BufferedImage F1, F2, F3, F4, F5, F6;
@@ -26,6 +26,7 @@ public class Assets {
                 SpriteSheet Fondo3 = new SpriteSheet(ImageLoader.loadImage("/textures/FC.png"));
                 SpriteSheet Fondo4 = new SpriteSheet(ImageLoader.loadImage("/textures/muertito.png"));
                 SpriteSheet dia = new SpriteSheet(ImageLoader.loadImage("/textures/diamond.png"));
+                SpriteSheet SPK = new SpriteSheet(ImageLoader.loadImage("/textures/Spike.png"));
         //Money - Life
                 M_L = new BufferedImage[11];
                 
@@ -40,12 +41,14 @@ public class Assets {
                 M_L[8] = sheet3.crop(width * 7, 0, width, height);
                 M_L[9] = sheet3.crop(width * 8, 0, width, height);
                 M_L[10] = sheet3.crop(width * 9, 0, width, height);
-        //Diamond
+        //Diamond & Spike
                 diamond = dia.crop(0, 0, width, height);
+                Spike = SPK.crop(0, 0, width, height);
         //Fondos
                 F1 = Fondo1.crop(0, 0, width * 62, height * 7);
                 F2 = Fondo2.crop(0, 0, width * 50, height * 7);
                 F6 = Fondo3.crop(0, 0, width * 11, height * 7);
+                Death = Fondo4.crop(0, 0, 900, 500);
                 
         //Back & Next
                 Back = new BufferedImage[2];

@@ -1,17 +1,16 @@
 package dev.game.state;
 
-/**
- * @author EFGK
- */
-import dev.game.Entity.Creature.Player;
 import dev.game.Handler;
 import dev.game.gfx.Assets;
 import dev.game.worlds.World;
 import java.awt.Graphics;
 
-public class GameState2 extends State{
+/**
+ * @author EFGK
+ */
+public class GameState2_5 extends State{
     private World World2;
-    public static String mundo  = "src/Worlds/World2_1.txt";
+    public static String mundo  = "src/Worlds/World2_2.txt";
     public World getWorld1() {
         return World2;
     }
@@ -20,7 +19,7 @@ public class GameState2 extends State{
         this.World2 = World1;
     }
     
-    public GameState2(Handler handler) {
+    public GameState2_5(Handler handler) {
         super(handler);
         World2 = new World(handler,mundo);
         handler.setWorld(World2);
@@ -37,4 +36,5 @@ public class GameState2 extends State{
         World2.render(g);
     }
 
+    
 }

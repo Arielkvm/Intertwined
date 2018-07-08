@@ -51,7 +51,17 @@ public abstract class Creature extends Entity {
                     if (!CTH2(tx, (int) (y + bounds.y) / Tile.Theight) && !CTH2(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
                         if (!CTD(tx, (int) (y + bounds.y) / Tile.Theight) && !CTD(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
                             if (!CTM(tx, (int) (y + bounds.y) / Tile.Theight) && !CTM(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-                                x += xMove;
+                                if (!CG1(tx, (int) (y + bounds.y) / Tile.Theight) && !CG1(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                                    if (!CG2(tx, (int) (y + bounds.y) / Tile.Theight) && !CG2(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                                        x += xMove;
+                                    } else {
+                                        handler.getGame().createStage2_2();
+                                        State.setState(handler.getGame().getGameState2_5());
+                                    }
+                                } else {
+                                    handler.getGame().createStage1_2();
+                                    State.setState(handler.getGame().getGameState1_5());
+                                }
                             } else {
                                 x += xMove;
                                 System.out.println("money");
@@ -60,8 +70,6 @@ public abstract class Creature extends Entity {
                             State.setState(handler.getGame().getDeathState());
                         }
                     } else {
-//                        handler.getGame().createStage2();
-//                        State.setState(handler.getGame().getGameState2());
                         State.setState(handler.getGame().getStoryState());
                     }
                 } else {
@@ -80,7 +88,17 @@ public abstract class Creature extends Entity {
                     if (!CTH2(tx, (int) (y + bounds.y) / Tile.Theight) && !CTH2(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
                         if (!CTD(tx, (int) (y + bounds.y) / Tile.Theight) && !CTD(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
                             if (!CTM(tx, (int) (y + bounds.y) / Tile.Theight) && !CTM(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
-                                x += xMove;
+                                if (!CG1(tx, (int) (y + bounds.y) / Tile.Theight) && !CG1(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                                    if (!CG2(tx, (int) (y + bounds.y) / Tile.Theight) && !CG2(tx, (int) (y + bounds.y + bounds.height) / Tile.Theight)) {
+                                        x += xMove;
+                                    } else {
+                                        handler.getGame().createStage2_2();
+                                        State.setState(handler.getGame().getGameState2_5());
+                                    }
+                                } else {
+                                    handler.getGame().createStage1_2();
+                                    State.setState(handler.getGame().getGameState1_5());
+                                }
                             } else {
                                 x += xMove;
                                 System.out.println("money");
@@ -89,8 +107,6 @@ public abstract class Creature extends Entity {
                             State.setState(handler.getGame().getDeathState());
                         }
                     } else {
-//                        handler.getGame().createStage2();
-//                        State.setState(handler.getGame().getGameState2());
                         State.setState(handler.getGame().getStoryState());
                     }
                 } else {
@@ -114,7 +130,17 @@ public abstract class Creature extends Entity {
                     if (!CTH2((int) (x + bounds.x) / Tile.Twidth, ty) && !CTH2((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
                         if (!CTD((int) (x + bounds.x) / Tile.Twidth, ty) && !CTD((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
                             if (!CTM((int) (x + bounds.x) / Tile.Twidth, ty) && !CTM((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
-                                y += yMove;
+                                if (!CG1((int) (x + bounds.x) / Tile.Twidth, ty) && !CG1((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                                    if (!CG2((int) (x + bounds.x) / Tile.Twidth, ty) && !CG2((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                                        y += yMove;
+                                    } else {
+                                        handler.getGame().createStage2_2();
+                                        State.setState(handler.getGame().getGameState2_5());
+                                    }
+                                } else {
+                                    handler.getGame().createStage1_2();
+                                    State.setState(handler.getGame().getGameState1_5());
+                                }
                             } else {
                                 y += yMove;
                                 System.out.println("money");
@@ -139,7 +165,17 @@ public abstract class Creature extends Entity {
                     if (!CTH2((int) (x + bounds.x) / Tile.Twidth, ty) && !CTH2((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
                         if (!CTD((int) (x + bounds.x) / Tile.Twidth, ty) && !CTD((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
                             if (!CTM((int) (x + bounds.x) / Tile.Twidth, ty) && !CTM((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
-                                y += yMove;
+                                if (!CG1((int) (x + bounds.x) / Tile.Twidth, ty) && !CG1((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                                    if (!CG2((int) (x + bounds.x) / Tile.Twidth, ty) && !CG2((int) (x + bounds.x + bounds.width) / Tile.Twidth, ty)) {
+                                        y += yMove;
+                                    } else {
+                                        handler.getGame().createStage2_2();
+                                        State.setState(handler.getGame().getGameState2_5());
+                                    }
+                                } else {
+                                    handler.getGame().createStage1_2();
+                                    State.setState(handler.getGame().getGameState1_5());
+                                }
                             } else {
                                 y += yMove;
                                 System.out.println("money");
@@ -183,6 +219,14 @@ public abstract class Creature extends Entity {
 
     protected boolean CTM(int x, int y) {
         return handler.getWorld().getTile(x, y).isMoney();
+    }
+
+    protected boolean CG1(int x, int y) {
+        return handler.getWorld().getTile(x, y).isCTG1();
+    }
+
+    protected boolean CG2(int x, int y) {
+        return handler.getWorld().getTile(x, y).isCTG2();
     }
 
     public int getHealth() {

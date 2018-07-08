@@ -26,6 +26,8 @@ public class Tile {
     public static Tile floor_asfalt = new floorAsfalt(12);
     public static Tile death = new DeathTile(13);
     public static Tile Diamond = new DiamondTile(14);
+    public static Tile checkpoint3 = new Checkpoint3(16);
+    public static Tile checkpoint4 =new CheckPoint4(17);
 
     protected BufferedImage texture;
     protected final int id;
@@ -51,6 +53,14 @@ public class Tile {
     }
 
     public boolean isCheckPoint() {
+        return false;
+    }
+    
+    public boolean isCTG1() {
+        return false;
+    }
+    
+    public boolean isCTG2() {
         return false;
     }
 

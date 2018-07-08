@@ -12,7 +12,9 @@ import dev.game.input.KeyManager;
 import dev.game.input.MouseManager;
 import dev.game.state.DeathState;
 import dev.game.state.GameState;
+import dev.game.state.GameState1_5;
 import dev.game.state.GameState2;
+import dev.game.state.GameState2_5;
 import dev.game.state.GameState3;
 import dev.game.state.HistoryState;
 import dev.game.state.MenuPrincipal;
@@ -35,7 +37,9 @@ public class Game implements Runnable {
 
     //States
     public State gameState;
+    public State gameState1_5;
     public State gameState2;
+    public State gameState2_5;
     public State gameState3;
     public State menuState;
     public State storestate;
@@ -43,7 +47,6 @@ public class Game implements Runnable {
     public State storystate;
     public State historystate;
     public State settingsstate;
-
 
     //Input
     private KeyManager keyManager;
@@ -76,27 +79,41 @@ public class Game implements Runnable {
         gcamera = new GCamera(handler, 0, 0);
 
         gameState = new GameState(handler);
+        gameState1_5 = new GameState1_5(handler);
         gameState2 = new GameState2(handler);
-        deathstate =  new DeathState(handler);
+        gameState2_5 = new GameState2_5(handler);
+        deathstate = new DeathState(handler);
         State.setState(this.getMenuState());
     }
-     public void createStage(){
+
+    public void createStage1_1() {
         gameState = new GameState(handler);
     }
-    public void createStage2(){
+
+    public void createStage1_2() {
         gameState = null;
+        gameState1_5 = new GameState1_5(handler);
+    }
+
+    public void createStage2_1() {
+        gameState1_5 = null;
         gameState2 = new GameState2(handler);
     }
-    
+
+    public void createStage2_2() {
+        gameState2 = null;
+        gameState2_5 = new GameState2_5(handler);
+    }
+
     public State getSettingsstate() {
         return new SettingsState(handler);
     }
-    
+
     public State getGameState() {
         return gameState;
     }
-    
-    public State getDeathState(){
+
+    public State getDeathState() {
         return deathstate;
     }
 
@@ -122,6 +139,14 @@ public class Game implements Runnable {
 
     public State getHistoryState() {
         return new HistoryState(handler);
+    }
+
+    public State getGameState1_5() {
+        return gameState1_5;
+    }
+
+    public State getGameState2_5() {
+        return gameState2_5;
     }
 
     private void tick() {

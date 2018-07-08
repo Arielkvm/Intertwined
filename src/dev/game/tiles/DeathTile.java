@@ -8,7 +8,7 @@ import dev.game.gfx.Assets;
 public class DeathTile extends Tile {
 
     public DeathTile(int id) {
-        super(Assets.voyd, id);
+        super(Assets.Spike, id);
     }
 
     @Override

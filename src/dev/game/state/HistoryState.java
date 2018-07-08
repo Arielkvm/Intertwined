@@ -46,3 +46,6 @@ public class HistoryState extends State{
     }
     
 }
+
+//handler.getGame().createStage2();
+//                        State.setState(handler.getGame().getGameState2());

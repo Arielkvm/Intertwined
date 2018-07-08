@@ -24,16 +24,16 @@ public class Enemy {
         switch(n){
             case 1:
                 System.out.println("Verga te hice "+10+" de daño");
-                return 10;
+                return 2;
             case 2:
                 System.out.println("Verga te hice "+5+" de daño");
-                return 5;
+                return 1;
             case 3:
                 System.out.println("Verga te hice "+15+" de daño");
-                return 15;
+                return 3;
             case 4:
                 System.out.println("Verga te hice "+20+" de daño");
-                return 20;
+                return 4;
             default:
                 return 0;
         }

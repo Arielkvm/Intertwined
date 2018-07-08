@@ -54,7 +54,7 @@ public class Game implements Runnable {
 
     //Camera
     private GCamera gcamera;
-
+    
     //Handler
     private Handler handler;
 

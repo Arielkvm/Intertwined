@@ -27,13 +27,10 @@ public class StoreState extends State{
         STUI.addObject(new UIIButton(250, 150, tm, tm, Assets.Brain, new ClickListener(){
             @Override
             public void onClick(){
-////                JuegoDao fd = new JuegoDao();
-////                Juego f = new Juego(ju.getId(),ju.getCuracion());
-////                if(fd.update(f)){
-////                    System.out.println("it worked");
-////                }else{
-////                    System.out.println("shit it didn't ");
-//                }
+                JuegoDao fd = new JuegoDao();
+                Juego f = fd.getTop();
+                System.out.println(f.getId());
+                
             }}));
         
         STUI.addObject(new UIIButton(500, 150, tm, tm, Assets.Clock, new ClickListener(){

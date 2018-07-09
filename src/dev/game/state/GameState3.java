@@ -15,10 +15,15 @@ import java.awt.Graphics;
 public class GameState3 extends State {
 
     public UIManager UIM;
+    public static StoreState store;
     int DM = 75;
 
     //Player
-    boolean Gun_Plus = false, Bomb_Plus = true, Sword_Plus = false, Potion_Plus = false;
+    private boolean Gun_Plus = false;
+    private boolean Bomb_Plus = false;
+    private boolean Sword_Plus = false;
+    private boolean Potion_Plus = false;
+
     int GunA = 1, BombA = 1, SwordA = 1, PotionR = 3;
     int LifeP = 20;
     int PlayerAA = 4;
@@ -38,6 +43,7 @@ public class GameState3 extends State {
             @Override
             public void onClick() {
                 PlayerAA = 3;
+
                 if (Bomb_Plus) {
                     BombA = 2;
                     LifeE = LifeE - BombA;
@@ -287,6 +293,26 @@ public class GameState3 extends State {
         }));
     }
 
+    public void setGun_Plus(boolean Gun_Plus) {
+        this.Gun_Plus = Gun_Plus;
+    }
+
+    public void setBomb_Plus(boolean Bomb_Plus) {
+        this.Bomb_Plus = Bomb_Plus;
+    }
+
+    public void setSword_Plus(boolean Sword_Plus) {
+        this.Sword_Plus = Sword_Plus;
+    }
+
+    public void setPotion_Plus(boolean Potion_Plus) {
+        this.Potion_Plus = Potion_Plus;
+    }
+
+    public void setGunA(int GunA) {
+        this.GunA = GunA;
+    }
+
     @Override
 
     public void tick() {
@@ -296,12 +322,12 @@ public class GameState3 extends State {
     @Override
     public void render(Graphics g) {
         g.drawImage(Assets.F1, 0, 0, 900, 500, null);
-        
+
         //Enemy
         g.drawImage(Assets.L[LifeE], 640, 80, 64, 64, null);
         g.drawImage(Assets.Enemy, 732, 32, 100, 100, null);
         g.drawImage(Assets.EAA[EnemyAA], 550, 150, 150, 150, null);
-        
+
         //Payer
         g.drawImage(Assets.L[LifeP], 196, 325, 64, 64, null);
         g.drawImage(Assets.Player, 64, 275, 100, 100, null);

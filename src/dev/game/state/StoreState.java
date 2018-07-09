@@ -15,8 +15,14 @@ import java.awt.Graphics;
 public class StoreState extends State{
     
     public UIManager STUI;
+    public GameState3 G3;
     int tm = 100;
-
+    private static boolean mejora1=false;
+    private static boolean mejora2=false;
+    private static boolean mejora3=false;
+    private static boolean mejora4=false;    
+    
+    int counter = 0;
     public StoreState(Handler handler) {
         super(handler);
         
@@ -27,28 +33,81 @@ public class StoreState extends State{
         STUI.addObject(new UIIButton(250, 150, tm, tm, Assets.Brain, new ClickListener(){
             @Override
             public void onClick(){
-//                JuegoDao fd = new JuegoDao();
-//                Juego f = fd.getTop();
-//                System.out.println(f.getId());
-                
+                if(mejora1==true){
+                    counter++;
+                }else if(mejora2==true){
+                    counter++;
+                }else if(mejora3==true){
+                    counter++;
+                }else if(mejora4==true){
+                    counter++;
+                }
+                if(counter <2){
+                    mejora1=true;
+                    G3.setBomb_Plus(mejora1);
+                    System.out.println("Mejorado");
+
+                }
             }}));
         
         STUI.addObject(new UIIButton(500, 150, tm, tm, Assets.Clock, new ClickListener(){
             @Override
             public void onClick(){
-                
+                if(mejora1==true){
+                    counter++;
+                }else if(mejora2==true){
+                    counter++;
+                }else if(mejora3==true){
+                    counter++;
+                }else if(mejora4==true){
+                    counter++;
+                }
+                if(counter <2){
+                    mejora2=true;
+                    G3.setGun_Plus(mejora2);
+                    System.out.println("Mejorado");
+
+                    
+                }
             }}));
         
         STUI.addObject(new UIIButton(250, 350, tm, tm, Assets.Sneaker, new ClickListener(){
             @Override
             public void onClick(){
-                
+                if(mejora1==true){
+                    counter++;
+                }else if(mejora2==true){
+                    counter++;
+                }else if(mejora3==true){
+                    counter++;
+                }else if(mejora4==true){
+                    counter++;
+                }
+                if(counter <2){
+                    mejora3=true;
+                    G3.setPotion_Plus(mejora3);
+                    System.out.println("Mejorado");
+
+                }
             }}));
         
         STUI.addObject(new UIIButton(500, 350, tm, tm, Assets.Potion2, new ClickListener(){
             @Override
             public void onClick(){
-                
+                if(mejora1==true){
+                    counter++;
+                }else if(mejora2==true){
+                    counter++;
+                }else if(mejora3==true){
+                    counter++;
+                }else if(mejora4==true){
+                    counter++;
+                }
+                if(counter <2){
+                    mejora4=true;
+                    G3.setSword_Plus(mejora4);
+                    System.out.println("Mejorado");
+                }
             }}));
         
         STUI.addObject(new UIIButton(25, 400, 150, 75, Assets.Back, new ClickListener(){
@@ -56,6 +115,38 @@ public class StoreState extends State{
             public void onClick(){
                 State.setState(handler.getGame().getMenuState());
             }}));
+    }
+    
+    public boolean isMejora1() {
+        return mejora1;
+    }
+
+    public void setMejora1(boolean mejora1) {
+        this.mejora1 = mejora1;
+    }
+
+    public boolean isMejora2() {
+        return mejora2;
+    }
+
+    public void setMejora2(boolean mejora2) {
+        this.mejora2 = mejora2;
+    }
+
+    public boolean isMejora3() {
+        return mejora3;
+    }
+
+    public void setMejora3(boolean mejora3) {
+        this.mejora3 = mejora3;
+    }
+
+    public boolean isMejora4() {
+        return mejora4;
+    }
+
+    public void setMejora4(boolean mejora4) {
+        this.mejora4 = mejora4;
     }
 
     @Override

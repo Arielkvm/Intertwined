@@ -19,8 +19,9 @@ public class JuegoDao implements metodos<Juego>{
     private static final String SQL_UPDATE ="UPDATE usuario SET puntaje =?, arma1=?, arma2= ?,vida= ?, ataque=?, curacion=? WHERE id=?";
     private static final String SQL_DELETE = "DELETE FROM usuario WHERE id=?";
     private static final String SQL_READ = "SELECT * FROM usuario WHERE id=?";
+    private static final String SQL_SELECT_P = "SELECT puntaje FROM usuario WHERE id=?";
     private static final String SQL_READALL ="SELECT * FROM usuario";
-    private static final String SQL_TOP = "SELECT TOP(1) id FROM usuario ORDER BY id DESC";
+    private static final String SQL_TOP = "SELECT id FROM usuario ORDER BY id DESC LIMIT 1";
     private static final String SQL_UPDATE_P = "UPDATE usuario SET puntaje =? WHERE id=?";
     private static final String SQL_UPDATE_A1 = "UPDATE usuario SET arma1 =? WHERE id=?";
     private static final String SQL_UPDATE_A2 = "UPDATE usuario SET arma2 =? WHERE id=?";
@@ -246,18 +247,17 @@ public class JuegoDao implements metodos<Juego>{
     }
 
     @Override
-    public Juego getTop(Object key) {
+    public Juego getTop() {
         Juego f = null;
         
         PreparedStatement ps;
         ResultSet rs;
         try{
             ps= con.getCnx().prepareStatement(SQL_TOP);
-            ps.setString(1, key.toString());
             rs = ps.executeQuery();
 
             while(rs.next()){
-                f = new Juego(rs.getInt(1),rs.getBoolean(2),rs.getBoolean(3),rs.getBoolean(4),rs.getBoolean(5),rs.getBoolean(6));
+                f = new Juego(rs.getInt(1));
             }
 
         }catch (SQLException ex){

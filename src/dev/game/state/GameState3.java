@@ -13,6 +13,8 @@ import dev.game.gfx.Assets;
 import java.awt.Graphics;
 
 public class GameState3 extends State {
+    
+    StoreState st;
 
     public UIManager UIM;
     int DM = 75;
@@ -38,6 +40,7 @@ public class GameState3 extends State {
             @Override
             public void onClick() {
                 PlayerAA = 3;
+                
                 if (Bomb_Plus) {
                     BombA = 2;
                     LifeE = LifeE - BombA;

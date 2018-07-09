@@ -17,7 +17,8 @@ public interface metodos<Generic> {
     public boolean updateVida (Generic c);
     public boolean updateAtaque (Generic c);
     public boolean updateCuracion (Generic c);
-    
+    public Generic getTop (); 
+    //public int getIdU();
     
     public Generic read(Object key);
     public ArrayList <Generic> readAll();

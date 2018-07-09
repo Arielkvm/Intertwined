@@ -31,7 +31,7 @@ public class HistoryState extends State{
             @Override
             public void onClick(){
                 handler.getGame().createStage2_1();
-                State.setState(handler.getGame().getGameState2());
+                State.setState(handler.getGame().getStoryState());
             }}));
     }
 

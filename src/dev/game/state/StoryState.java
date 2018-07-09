@@ -31,7 +31,7 @@ public class StoryState extends State{
             @Override
             public void onClick(){
 //                handler.getGame().createStage2_1();
-                State.setState(handler.getGame().getGameState3());
+                State.setState(handler.getGame().getMenuState());
             }}));
     }
 

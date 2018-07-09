@@ -82,14 +82,7 @@ public class MenuPrincipal extends State {
                 State.setState(handler.getGame().getHistoryState());
             }
         }));
-        //Debug
-        uimanager.addObject(new UIIButton(64, 64, 64, 64, Assets.B4, new ClickListener() {
-            @Override
-            public void onClick() {
-                handler.getMouseManager().setUIManager(null);
-                State.setState(handler.getGame().getGameState3());
-            }
-        }));
+        
     }
 
     @Override

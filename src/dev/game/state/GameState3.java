@@ -19,7 +19,7 @@ public class GameState3 extends State {
 
     //Player
     boolean Gun_Plus = false, Bomb_Plus = true, Sword_Plus = false, Potion_Plus = false;
-    int GunA = 1, BombA = 1, SwordA = 1, PotionR = 2;
+    int GunA = 1, BombA = 1, SwordA = 1, PotionR = 3;
     int LifeP = 20;
     int PlayerAA = 4;
 
@@ -43,7 +43,7 @@ public class GameState3 extends State {
                     LifeE = LifeE - BombA;
                     if (LifeE <= 0) {
                         LifeE = 0;
-                        State.setState(handler.getGame().getDeathState());
+                        State.setState(handler.getGame().getWinState());
                     }
                 } else {
                     LifeE = LifeE - BombA;
@@ -105,7 +105,7 @@ public class GameState3 extends State {
                     LifeE = LifeE - SwordA;
                     if (LifeE <= 0) {
                         LifeE = 0;
-                        State.setState(handler.getGame().getDeathState());
+                        State.setState(handler.getGame().getWinState());
                     }
                 } else {
                     LifeE = LifeE - SwordA;
@@ -162,7 +162,7 @@ public class GameState3 extends State {
                 System.out.println("*Gulp*");
                 if (Potion_Plus) {
 
-                    PotionR = 3;
+                    PotionR = 5;
                     LifeP = LifeP + PotionR;
 
                     if (LifeP >= 20) {
@@ -241,6 +241,7 @@ public class GameState3 extends State {
 
                     if (LifeE <= 0) {
                         LifeE = 0;
+                        State.setState(handler.getGame().getWinState());
                     }
 
                 }

@@ -29,8 +29,8 @@ public class Assets {
         SpriteSheet SPK = new SpriteSheet(ImageLoader.loadImage("/textures/Spike.png"));
         SpriteSheet W = new SpriteSheet(ImageLoader.loadImage("/textures/Win.png"));
         SpriteSheet LG = new SpriteSheet(ImageLoader.loadImage("/textures/Logo.png"));
-        SpriteSheet Story1 = new SpriteSheet(ImageLoader.loadImage("/textures/story1.png"));
-        SpriteSheet Story2 = new SpriteSheet(ImageLoader.loadImage("/textures/story2.png"));
+        SpriteSheet Story1 = new SpriteSheet(ImageLoader.loadImage("/textures/story1_1.png"));
+        SpriteSheet Story2 = new SpriteSheet(ImageLoader.loadImage("/textures/story2_1.png"));
         
         //Last Assets
         ST1 = Story1.crop(0, 0, 900, 500);

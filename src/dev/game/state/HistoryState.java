@@ -30,7 +30,7 @@ public class HistoryState extends State{
         STUI.addObject(new UIIButton(725, 400, 150, 75, Assets.Next, new ClickListener(){
             @Override
             public void onClick(){
-                State.setState(handler.getGame().getGameState3());
+                State.setState(handler.getGame().getStoryState());
             }}));
     }
 

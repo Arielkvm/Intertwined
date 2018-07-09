@@ -3,6 +3,8 @@ package dev.game.state;
 /**
  * @author EFGK
  */
+//import base.Juego;
+import base.JuegoDao;
 import dev.game.Handler;
 import dev.game.UI.ClickListener;
 import dev.game.UI.UIIButton;
@@ -58,6 +60,9 @@ public class MenuPrincipal extends State {
         uimanager.addObject(new UIIButton(352, 265, 192, 64, Assets.B2, new ClickListener() {
             @Override
             public void onClick() {
+//                JuegoDao fd = new JuegoDao();
+//                Juego f = fd.getTop();
+//                System.out.println(f.getId());
                 handler.getMouseManager().setUIManager(null);
                 State.setState(handler.getGame().getSettingsstate());
             }

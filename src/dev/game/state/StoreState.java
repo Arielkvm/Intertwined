@@ -15,7 +15,6 @@ import java.awt.Graphics;
 public class StoreState extends State{
     
     public UIManager STUI;
-    public GameState3 G3;
     int tm = 100;
     private static boolean mejora1=false;
     private static boolean mejora2=false;
@@ -44,7 +43,6 @@ public class StoreState extends State{
                 }
                 if(counter <2){
                     mejora1=true;
-                    G3.setBomb_Plus(mejora1);
                     System.out.println("Mejorado");
 
                 }
@@ -64,7 +62,6 @@ public class StoreState extends State{
                 }
                 if(counter <2){
                     mejora2=true;
-                    G3.setGun_Plus(mejora2);
                     System.out.println("Mejorado");
 
                     
@@ -85,7 +82,6 @@ public class StoreState extends State{
                 }
                 if(counter <2){
                     mejora3=true;
-                    G3.setPotion_Plus(mejora3);
                     System.out.println("Mejorado");
 
                 }
@@ -105,7 +101,6 @@ public class StoreState extends State{
                 }
                 if(counter <2){
                     mejora4=true;
-                    G3.setSword_Plus(mejora4);
                     System.out.println("Mejorado");
                 }
             }}));

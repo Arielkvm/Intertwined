@@ -24,7 +24,7 @@ public class GameState3 extends State {
     private boolean Sword_Plus = false;
     private boolean Potion_Plus = false;
 
-    int GunA = 1, BombA = 1, SwordA = 1, PotionR = 3;
+    int GunA = 4, BombA = 3, SwordA = 1, PotionR = 3;
     int LifeP = 20;
     int PlayerAA = 4;
 

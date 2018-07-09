@@ -10,7 +10,7 @@ import java.awt.Graphics;
  */
 public class GameState2_5 extends State{
     private World World2;
-    public static String mundo  = "src/Worlds/World2_1.txt";
+    public static String mundo  = "src/Worlds/World2_2.txt";
     public World getWorld1() {
         return World2;
     }
@@ -21,7 +21,7 @@ public class GameState2_5 extends State{
     
     public GameState2_5(Handler handler) {
         super(handler);
-        World2 = new World(handler,"src/Worlds/World2_1.txt");
+        World2 = new World(handler,"src/Worlds/World2_2.txt");
         handler.setWorld(World2);
     }
 

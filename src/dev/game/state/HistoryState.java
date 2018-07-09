@@ -21,16 +21,17 @@ public class HistoryState extends State{
         STUI = new UIManager(handler);
         handler.getMouseManager().setUIManager(STUI);
                 
-        STUI.addObject(new UIIButton(25, 400, 150, 75, Assets.Back, new ClickListener(){
-            @Override
-            public void onClick(){
-                State.setState(handler.getGame().getMenuState());
-            }}));
+//        STUI.addObject(new UIIButton(25, 400, 150, 75, Assets.Back, new ClickListener(){
+//            @Override
+//            public void onClick(){
+//                State.setState(handler.getGame().getMenuState());
+//            }}));
         
         STUI.addObject(new UIIButton(725, 400, 150, 75, Assets.Next, new ClickListener(){
             @Override
             public void onClick(){
-                State.setState(handler.getGame().getStoryState());
+                handler.getGame().createStage2_1();
+                State.setState(handler.getGame().getGameState2());
             }}));
     }
 

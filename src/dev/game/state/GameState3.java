@@ -49,6 +49,7 @@ public class GameState3 extends State {
                     LifeE = LifeE - BombA;
                     if (LifeE <= 0) {
                         LifeE = 0;
+                        State.setState(handler.getGame().getWinState());
                     }
                 }
 
@@ -110,6 +111,7 @@ public class GameState3 extends State {
                     LifeE = LifeE - SwordA;
                     if (LifeE <= 0) {
                         LifeE = 0;
+                        State.setState(handler.getGame().getWinState());
                     }
                 }
 
@@ -230,7 +232,7 @@ public class GameState3 extends State {
 
                     if (LifeE <= 0) {
                         LifeE = 0;
-                        State.setState(handler.getGame().getDeathState());
+                        State.setState(handler.getGame().getWinState());
                     }
 
                 } else {

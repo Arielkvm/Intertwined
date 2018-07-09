@@ -22,6 +22,7 @@ import dev.game.state.SettingsState;
 import dev.game.state.State;
 import dev.game.state.StoreState;
 import dev.game.state.StoryState;
+import dev.game.state.WinState;
 
 public class Game implements Runnable {
 
@@ -47,6 +48,7 @@ public class Game implements Runnable {
     public State storystate;
     public State historystate;
     public State settingsstate;
+    public State WinState;
 
     //Input
     private KeyManager keyManager;
@@ -83,6 +85,7 @@ public class Game implements Runnable {
         gameState2 = new GameState2(handler);
         gameState2_5 = new GameState2_5(handler);
         deathstate = new DeathState(handler);
+        WinState = new WinState(handler);
         State.setState(this.getMenuState());
     }
 
@@ -115,6 +118,10 @@ public class Game implements Runnable {
 
     public State getDeathState() {
         return deathstate;
+    }
+    
+    public State getWinState(){
+        return WinState;
     }
 
     public State getGameState2() {

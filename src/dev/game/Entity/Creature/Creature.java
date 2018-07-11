@@ -65,7 +65,7 @@ public abstract class Creature extends Entity {
                                 }
                             } else {
                                 x += xMove;
-                                System.out.println("money");
+                                //System.out.println("money");
                             }
                         } else {
                             State.setState(handler.getGame().getDeathState());
@@ -103,7 +103,7 @@ public abstract class Creature extends Entity {
                                 }
                             } else {
                                 x += xMove;
-                                System.out.println("money");
+                                //System.out.println("money");
                             }
                         } else {
                             State.setState(handler.getGame().getDeathState());
@@ -145,7 +145,7 @@ public abstract class Creature extends Entity {
                                 }
                             } else {
                                 y += yMove;
-                                System.out.println("money");
+                                //System.out.println("money");
                             }
                         } else {
                             State.setState(handler.getGame().getDeathState());
@@ -180,7 +180,7 @@ public abstract class Creature extends Entity {
                                 }
                             } else {
                                 y += yMove;
-                                System.out.println("money");
+                                //System.out.println("money");
                             }
                         } else {
                             State.setState(handler.getGame().getDeathState());

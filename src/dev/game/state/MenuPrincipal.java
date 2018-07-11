@@ -17,7 +17,7 @@ import music.Musica;
 public class MenuPrincipal extends State {
 
     public UIManager uimanager;
-//    Musica musica = new Musica();
+    Musica musica = new Musica();
 //    public void music(){
 //        File Music = new File("src/music/UndertaleAnotherMedium.wav");
 //        PlaySound(Music);
@@ -33,13 +33,13 @@ public class MenuPrincipal extends State {
 //        }
 //    }
 
-//    public Musica getMusica() {
-//        return musica;
-//    }
-//
-//    public void parar() {
-//        musica.detener();
-//    }
+    public Musica getMusica() {
+        return musica;
+    }
+
+    public void parar() {
+        musica.detener();
+    }
 
     public MenuPrincipal(Handler handler) {
         super(handler);
@@ -52,7 +52,7 @@ public class MenuPrincipal extends State {
                 handler.getMouseManager().setUIManager(null);
                 handler.getGame().createStage1_1();
                 State.setState(handler.getGame().getGameState());
-//                musica.start();
+                musica.start();
             }
         }));
 
